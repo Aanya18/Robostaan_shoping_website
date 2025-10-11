@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
+import { adminAPI } from '@/lib/types';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { 
@@ -56,20 +57,8 @@ export default function AdminOrders() {
 
   const fetchOrders = async () => {
     try {
-      const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:8000/api/admin/orders', {
-        headers: {
-          'Authorization': `Bearer ${token}`,
-          'Content-Type': 'application/json',
-        },
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to fetch orders');
-      }
-
-      const data = await response.json();
-      setOrders(data.orders || []);
+      const res = await adminAPI.getOrders();
+      setOrders(res.data.orders || []);
     } catch (error) {
       console.error('Error fetching orders:', error);
       setError('Failed to load orders');
@@ -100,19 +89,7 @@ export default function AdminOrders() {
 
   const updateOrderStatus = async (orderId: number, newStatus: string) => {
     try {
-      const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:8000/api/admin/orders/${orderId}/status?status=${newStatus}`, {
-        method: 'PUT',
-        headers: {
-          'Authorization': `Bearer ${token}`,
-          'Content-Type': 'application/json',
-        },
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to update order status');
-      }
-
+      await adminAPI.updateOrderStatus(orderId, newStatus);
       // Refresh orders
       fetchOrders();
       alert('Order status updated successfully');

@@ -80,7 +80,7 @@ export default function CartPage() {
                 <div className="flex-shrink-0">
                   {item.product.has_image ? (
                     <Image
-                      src={`http://localhost:8000/api/products/${item.product.id}/image`}
+                      src={`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/products/${item.product.id}/image`}
                       alt={item.product.name}
                       width={96}
                       height={96}

@@ -25,7 +25,7 @@ export default function ShippingPage() {
               <div className="text-sm text-gray-500">
                 <p>• Ground shipping via UPS/FedEx</p>
                 <p>• Tracking included</p>
-                <p>• Signature required for orders >$500</p>
+                <p>• Signature required for orders &gt;$500</p>
               </div>
             </div>
           </div>
@@ -145,7 +145,7 @@ export default function ShippingPage() {
                 <span className="font-medium">3-7 business days</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-600">Bulk orders (>1000 pcs)</span>
+                <span className="text-gray-600">Bulk orders (&gt;1000 pcs)</span>
                 <span className="font-medium">5-10 business days</span>
               </div>
             </div>
