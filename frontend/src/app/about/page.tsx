@@ -26,16 +26,16 @@ export default function AboutPage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div className="bg-primary-50 rounded-lg p-6">
-              <h3 className="text-xl font-semibold text-primary-800 mb-3">Our Mission</h3>
+            <div className="bg-orange-50 rounded-lg p-6">
+              <h3 className="text-xl font-semibold text-orange-800 mb-3">Our Mission</h3>
               <p className="text-gray-700">
                 To empower makers, students, and engineers with reliable access to Arduino boards, 
                 sensors, and prototyping components, along with comprehensive project guides and support.
               </p>
             </div>
             
-            <div className="bg-primary-50 rounded-lg p-6">
-              <h3 className="text-xl font-semibold text-primary-800 mb-3">Our Vision</h3>
+            <div className="bg-orange-50 rounded-lg p-6">
+              <h3 className="text-xl font-semibold text-orange-800 mb-3">Our Vision</h3>
               <p className="text-gray-700">
                 To be the go-to destination for the maker community, enabling 
                 innovation through quality components, detailed tutorials, and expert guidance.
@@ -47,7 +47,7 @@ export default function AboutPage() {
             <h2 className="text-2xl font-semibold text-gray-900 mb-6">Why Choose MaxBot Electronics?</h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="flex items-start space-x-3">
-                <div className="w-6 h-6 bg-primary-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <div className="w-6 h-6 bg-orange-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                   <span className="text-white text-sm">✓</span>
                 </div>
                 <div>
@@ -57,7 +57,7 @@ export default function AboutPage() {
               </div>
               
               <div className="flex items-start space-x-3">
-                <div className="w-6 h-6 bg-primary-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <div className="w-6 h-6 bg-orange-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                   <span className="text-white text-sm">✓</span>
                 </div>
                 <div>
@@ -67,7 +67,7 @@ export default function AboutPage() {
               </div>
               
               <div className="flex items-start space-x-3">
-                <div className="w-6 h-6 bg-primary-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <div className="w-6 h-6 bg-orange-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                   <span className="text-white text-sm">✓</span>
                 </div>
                 <div>
@@ -77,7 +77,7 @@ export default function AboutPage() {
               </div>
               
               <div className="flex items-start space-x-3">
-                <div className="w-6 h-6 bg-primary-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <div className="w-6 h-6 bg-orange-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                   <span className="text-white text-sm">✓</span>
                 </div>
                 <div>

@@ -46,8 +46,8 @@ export default function ContactPage() {
 
           <div className="space-y-6">
             <div className="flex items-start space-x-4">
-              <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <PhoneIcon className="w-6 h-6 text-primary-600" />
+              <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <PhoneIcon className="w-6 h-6 text-orange-600" />
               </div>
               <div>
                 <h3 className="text-lg font-medium text-gray-900">Technical Support</h3>
@@ -58,8 +58,8 @@ export default function ContactPage() {
             </div>
 
             <div className="flex items-start space-x-4">
-              <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <EnvelopeIcon className="w-6 h-6 text-primary-600" />
+              <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <EnvelopeIcon className="w-6 h-6 text-orange-600" />
               </div>
               <div>
                 <h3 className="text-lg font-medium text-gray-900">Email Support</h3>
@@ -70,8 +70,8 @@ export default function ContactPage() {
             </div>
 
             <div className="flex items-start space-x-4">
-              <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <MapPinIcon className="w-6 h-6 text-primary-600" />
+              <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <MapPinIcon className="w-6 h-6 text-orange-600" />
               </div>
               <div>
                 <h3 className="text-lg font-medium text-gray-900">Engineering Office</h3>
@@ -84,8 +84,8 @@ export default function ContactPage() {
             </div>
 
             <div className="flex items-start space-x-4">
-              <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <ClockIcon className="w-6 h-6 text-primary-600" />
+              <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <ClockIcon className="w-6 h-6 text-orange-600" />
               </div>
               <div>
                 <h3 className="text-lg font-medium text-gray-900">Support Hours</h3>
@@ -93,7 +93,7 @@ export default function ContactPage() {
                   <p>Monday - Friday: 9:00 AM - 6:00 PM EST</p>
                   <p>Saturday: 10:00 AM - 2:00 PM EST</p>
                   <p>Sunday: Closed</p>
-                  <p className="text-sm text-primary-600">24/7 Emergency Support Available</p>
+                  <p className="text-sm text-orange-600">24/7 Emergency Support Available</p>
                 </div>
               </div>
             </div>

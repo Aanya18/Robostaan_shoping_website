@@ -139,7 +139,7 @@ export default function CheckoutPage() {
                 <label className="flex items-center">
                   <input
                     type="checkbox"
-                    className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
+                    className="h-4 w-4 text-orange-600 focus:ring-orange-500 border-gray-300 rounded"
                     onChange={(e) => {
                       if (e.target.checked) {
                         setFormData({ ...formData, billing_address: '' });
@@ -179,7 +179,7 @@ export default function CheckoutPage() {
                     value="credit_card"
                     checked={formData.payment_method === 'credit_card'}
                     onChange={handleChange}
-                    className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300"
+                    className="h-4 w-4 text-orange-600 focus:ring-orange-500 border-gray-300"
                   />
                   <span className="ml-2 text-sm text-gray-700">Credit Card</span>
                 </label>
@@ -191,7 +191,7 @@ export default function CheckoutPage() {
                     value="paypal"
                     checked={formData.payment_method === 'paypal'}
                     onChange={handleChange}
-                    className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300"
+                    className="h-4 w-4 text-orange-600 focus:ring-orange-500 border-gray-300"
                   />
                   <span className="ml-2 text-sm text-gray-700">PayPal</span>
                 </label>
@@ -203,7 +203,7 @@ export default function CheckoutPage() {
                     value="bank_transfer"
                     checked={formData.payment_method === 'bank_transfer'}
                     onChange={handleChange}
-                    className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300"
+                    className="h-4 w-4 text-orange-600 focus:ring-orange-500 border-gray-300"
                   />
                   <span className="ml-2 text-sm text-gray-700">Bank Transfer</span>
                 </label>

@@ -77,7 +77,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         {/* Price and Stock */}
         <div className="flex justify-between items-center mb-3">
           <div>
-            <span className="text-2xl font-bold text-primary-600">
+            <span className="text-2xl font-bold text-orange-600">
               ${product.price.toFixed(2)}
             </span>
           </div>

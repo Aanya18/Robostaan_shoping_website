@@ -44,21 +44,21 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary-600 to-primary-800 text-white">
+      <section className="bg-gradient-to-r from-orange-500 to-orange-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Professional Electronics Components Store
             </h1>
-            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-primary-100">
+            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-orange-100">
               Your trusted source for Arduino, Raspberry Pi, sensors, ICs, and electronic components. 
               From hobbyist projects to industrial applications.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/categories" className="bg-white text-primary-600 px-8 py-3 rounded-lg font-semibold hover:bg-primary-50 transition-colors">
+              <Link href="/categories" className="bg-white text-orange-600 px-8 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-colors">
                 Browse Categories
               </Link>
-              <Link href="/products" className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary-600 transition-colors">
+              <Link href="/products" className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors">
                 Shop All Components
               </Link>
             </div>
@@ -71,19 +71,19 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-3xl font-bold text-primary-600 mb-2">10,000+</div>
+              <div className="text-3xl font-bold text-orange-600 mb-2">10,000+</div>
               <div className="text-gray-600">Components</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-primary-600 mb-2">50,000+</div>
+              <div className="text-3xl font-bold text-orange-600 mb-2">50,000+</div>
               <div className="text-gray-600">Happy Makers</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-primary-600 mb-2">24/7</div>
+              <div className="text-3xl font-bold text-orange-600 mb-2">24/7</div>
               <div className="text-gray-600">Tech Support</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-primary-600 mb-2">Same Day</div>
+              <div className="text-3xl font-bold text-orange-600 mb-2">Same Day</div>
               <div className="text-gray-600">Shipping</div>
             </div>
           </div>
@@ -95,32 +95,32 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <TruckIcon className="w-8 h-8 text-primary-600" />
+              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <TruckIcon className="w-8 h-8 text-orange-600" />
               </div>
                 <h3 className="text-lg font-semibold mb-2">Quality Components</h3>
                 <p className="text-gray-600">Genuine components from trusted manufacturers</p>
               </div>
               
               <div className="text-center">
-                <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <ShieldCheckIcon className="w-8 h-8 text-primary-600" />
+                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <ShieldCheckIcon className="w-8 h-8 text-orange-600" />
                 </div>
                 <h3 className="text-lg font-semibold mb-2">Technical Support</h3>
                 <p className="text-gray-600">Expert technical assistance and datasheets</p>
               </div>
               
               <div className="text-center">
-                <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <CurrencyDollarIcon className="w-8 h-8 text-primary-600" />
+                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <CurrencyDollarIcon className="w-8 h-8 text-orange-600" />
                 </div>
                 <h3 className="text-lg font-semibold mb-2">Bulk Pricing</h3>
                 <p className="text-gray-600">Volume discounts for educational and commercial projects</p>
               </div>
               
               <div className="text-center">
-                <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <PhoneIcon className="w-8 h-8 text-primary-600" />
+                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <PhoneIcon className="w-8 h-8 text-orange-600" />
                 </div>
                 <h3 className="text-lg font-semibold mb-2">Engineering Support</h3>
                 <p className="text-gray-600">Design consultation and component selection help</p>
@@ -149,12 +149,12 @@ export default function HomePage() {
                   href={`/products?category=${category.id}`}
                   className="group bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-6 text-center"
                 >
-                  <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-200 transition-colors">
+                  <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-200 transition-colors">
                     <span className="text-2xl">📱</span>
                   </div>
                   <h3 className="font-semibold text-gray-900 mb-2">{category.name}</h3>
                   <p className="text-sm text-gray-600 mb-3">{category.description}</p>
-                  <div className="flex items-center justify-center text-primary-600 group-hover:text-primary-700">
+                  <div className="flex items-center justify-center text-orange-600 group-hover:text-orange-700">
                     <span className="text-sm font-medium">Shop now</span>
                     <ChevronRightIcon className="w-4 h-4 ml-1" />
                   </div>
@@ -275,12 +275,12 @@ export default function HomePage() {
       </section>
 
       {/* Newsletter Section */}
-      <section className="py-16 bg-primary-600">
+      <section className="py-16 bg-orange-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
             Stay Updated with New Components
           </h2>
-          <p className="text-xl text-primary-100 mb-8">
+          <p className="text-xl text-orange-100 mb-8">
             Get notified about new product arrivals, technical guides, and special offers
           </p>
           <div className="max-w-md mx-auto flex gap-4">
@@ -289,7 +289,7 @@ export default function HomePage() {
               placeholder="Enter your email"
               className="flex-1 px-4 py-3 rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-white"
             />
-            <button className="bg-white text-primary-600 px-6 py-3 rounded-lg font-semibold hover:bg-primary-50 transition-colors">
+            <button className="bg-white text-orange-600 px-6 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-colors">
               Subscribe
             </button>
           </div>
@@ -318,7 +318,7 @@ export default function HomePage() {
               <p className="text-gray-600 mb-6 leading-relaxed">
                 Learn about our mission to provide quality electronics components to makers, engineers, and innovators worldwide.
               </p>
-              <div className="text-blue-600 font-medium group-hover:underline text-lg">
+              <div className="text-orange-600 font-medium group-hover:underline text-lg">
                 Learn More →
               </div>
             </Link>
@@ -332,7 +332,7 @@ export default function HomePage() {
               <p className="text-gray-600 mb-6 leading-relaxed">
                 Browse our organized component categories: microcontrollers, sensors, power supplies, development boards, and more.
               </p>
-              <div className="text-purple-600 font-medium group-hover:underline text-lg">
+              <div className="text-orange-600 font-medium group-hover:underline text-lg">
                 Browse Categories →
               </div>
             </Link>
@@ -356,16 +356,16 @@ export default function HomePage() {
           <div className="mt-12 text-center">
             <p className="text-gray-600 mb-6">Need more help? Check out our support resources:</p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/faq" className="bg-white text-gray-700 px-4 py-2 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-200 hover:border-primary-300">
+              <Link href="/faq" className="bg-white text-gray-700 px-4 py-2 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-200 hover:border-orange-300">
                 📚 FAQ
               </Link>
-              <Link href="/shipping" className="bg-white text-gray-700 px-4 py-2 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-200 hover:border-primary-300">
+              <Link href="/shipping" className="bg-white text-gray-700 px-4 py-2 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-200 hover:border-orange-300">
                 🚚 Shipping Info
               </Link>
-              <Link href="/returns" className="bg-white text-gray-700 px-4 py-2 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-200 hover:border-primary-300">
+              <Link href="/returns" className="bg-white text-gray-700 px-4 py-2 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-200 hover:border-orange-300">
                 📦 Returns & Warranty
               </Link>
-              <Link href="/deals" className="bg-white text-gray-700 px-4 py-2 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-200 hover:border-primary-300">
+              <Link href="/deals" className="bg-white text-gray-700 px-4 py-2 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-200 hover:border-orange-300">
                 🔥 Special Deals
               </Link>
             </div>

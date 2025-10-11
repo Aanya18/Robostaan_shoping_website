@@ -100,7 +100,7 @@ export default function CartPage() {
                   <div>
                     <div className="flex justify-between text-base font-medium text-gray-900">
                       <h3>
-                        <Link href={`/products/${item.product.id}`} className="hover:text-primary-600">
+                        <Link href={`/products/${item.product.id}`} className="hover:text-orange-600">
                           {item.product.name}
                         </Link>
                       </h3>
@@ -187,7 +187,7 @@ export default function CartPage() {
             </div>
             
             <div className="mt-4 text-center">
-              <Link href="/products" className="text-sm font-medium text-primary-600 hover:text-primary-500">
+              <Link href="/products" className="text-sm font-medium text-orange-600 hover:text-primary-500">
                 Continue Shopping
                 <span aria-hidden="true"> &rarr;</span>
               </Link>

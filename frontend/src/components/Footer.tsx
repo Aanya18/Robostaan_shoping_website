@@ -8,7 +8,7 @@ export default function Footer() {
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-orange-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">E</span>
               </div>
               <span className="text-xl font-bold">ElectroShop</span>

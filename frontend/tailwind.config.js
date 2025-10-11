@@ -5,20 +5,29 @@ module.exports = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
+        orange: {
+          500: '#C45215',
+          600: '#B8470F',
+        },
+        gray: {
+          800: '#1E2A32',
+          900: '#1A252B',
+        },
         primary: {
           50: '#eff6ff',
           100: '#dbeafe',
           200: '#bfdbfe',
           300: '#93c5fd',
           400: '#60a5fa',
-          500: '#3b82f6',
-          600: '#2563eb',
+          500: '#C45215',
+          600: '#B8470F',
           700: '#1d4ed8',
-          800: '#1e40af',
-          900: '#1e3a8a',
+          800: '#1E2A32',
+          900: '#1A252B',
         },
         secondary: {
           50: '#f9fafb',
@@ -29,12 +38,15 @@ module.exports = {
           500: '#6b7280',
           600: '#4b5563',
           700: '#374151',
-          800: '#1f2937',
-          900: '#111827',
+          800: '#1E2A32',
+          900: '#1A252B',
         }
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
+      },
+      animation: {
+        'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
     },
   },

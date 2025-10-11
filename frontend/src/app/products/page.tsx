@@ -117,7 +117,7 @@ export default function ProductsPage() {
                     name="category"
                     checked={selectedCategory === null}
                     onChange={() => setSelectedCategory(null)}
-                    className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300"
+                    className="h-4 w-4 text-orange-600 focus:ring-orange-500 border-gray-300"
                   />
                   <span className="ml-2 text-sm text-gray-700">All Categories</span>
                 </label>
@@ -128,7 +128,7 @@ export default function ProductsPage() {
                       name="category"
                       checked={selectedCategory === category.id}
                       onChange={() => setSelectedCategory(category.id)}
-                      className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300"
+                      className="h-4 w-4 text-orange-600 focus:ring-orange-500 border-gray-300"
                     />
                     <span className="ml-2 text-sm text-gray-700">{category.name}</span>
                   </label>

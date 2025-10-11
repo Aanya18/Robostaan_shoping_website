@@ -23,7 +23,7 @@ export default function Header() {
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-orange-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">⚡</span>
               </div>
               <span className="text-xl font-bold text-gray-900">
@@ -34,21 +34,21 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="/categories" className="text-gray-700 hover:text-primary-600 font-medium">
+            <Link href="/categories" className="text-gray-700 hover:text-orange-600 font-medium">
               Categories
             </Link>
-            <Link href="/products" className="text-gray-700 hover:text-primary-600 font-medium">
+            <Link href="/products" className="text-gray-700 hover:text-orange-600 font-medium">
               All Products
             </Link>
             {user && user.is_admin && (
-              <Link href="/admin" className="text-primary-600 hover:text-primary-800 font-medium">
+              <Link href="/admin" className="text-orange-600 hover:text-orange-800 font-medium">
                 Admin Panel
               </Link>
             )}
-            <Link href="/about" className="text-gray-700 hover:text-primary-600 font-medium">
+            <Link href="/about" className="text-gray-700 hover:text-orange-600 font-medium">
               About
             </Link>
-            <Link href="/contact" className="text-gray-700 hover:text-primary-600 font-medium">
+            <Link href="/contact" className="text-gray-700 hover:text-orange-600 font-medium">
               Contact
             </Link>
           </div>
@@ -56,10 +56,10 @@ export default function Header() {
           {/* Right side actions */}
           <div className="flex items-center space-x-4">
             {/* Cart */}
-            <Link href="/cart" className="relative p-2 text-gray-700 hover:text-primary-600">
+            <Link href="/cart" className="relative p-2 text-gray-700 hover:text-orange-600">
               <ShoppingBagIcon className="h-6 w-6" />
               {itemCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-primary-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 bg-orange-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
                   {itemCount}
                 </span>
               )}
@@ -68,7 +68,7 @@ export default function Header() {
             {/* User Menu */}
             {user ? (
               <div className="relative group">
-                <button className="flex items-center space-x-2 text-gray-700 hover:text-primary-600">
+                <button className="flex items-center space-x-2 text-gray-700 hover:text-orange-600">
                   <UserIcon className="h-6 w-6" />
                   <span className="hidden md:block">{user.first_name}</span>
                 </button>
@@ -89,7 +89,7 @@ export default function Header() {
               </div>
             ) : (
               <div className="flex items-center space-x-2">
-                <Link href="/login" className="text-gray-700 hover:text-primary-600 font-medium">
+                <Link href="/login" className="text-gray-700 hover:text-orange-600 font-medium">
                   Login
                 </Link>
                 <Link href="/register" className="btn-primary">
@@ -101,7 +101,7 @@ export default function Header() {
             {/* Mobile menu button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 text-gray-700 hover:text-primary-600"
+              className="md:hidden p-2 text-gray-700 hover:text-orange-600"
             >
               {isMenuOpen ? (
                 <XMarkIcon className="h-6 w-6" />
@@ -116,21 +116,21 @@ export default function Header() {
         {isMenuOpen && (
           <div className="md:hidden border-t border-gray-200 py-4">
             <div className="flex flex-col space-y-4">
-              <Link href="/categories" className="text-gray-700 hover:text-primary-600 font-medium">
+              <Link href="/categories" className="text-gray-700 hover:text-orange-600 font-medium">
                 Categories
               </Link>
-              <Link href="/products" className="text-gray-700 hover:text-primary-600 font-medium">
+              <Link href="/products" className="text-gray-700 hover:text-orange-600 font-medium">
                 All Products
               </Link>
               {user && user.is_admin && (
-                <Link href="/admin" className="text-primary-600 hover:text-primary-800 font-medium">
+                <Link href="/admin" className="text-orange-600 hover:text-orange-800 font-medium">
                   Admin Panel
                 </Link>
               )}
-              <Link href="/about" className="text-gray-700 hover:text-primary-600 font-medium">
+              <Link href="/about" className="text-gray-700 hover:text-orange-600 font-medium">
                 About
               </Link>
-              <Link href="/contact" className="text-gray-700 hover:text-primary-600 font-medium">
+              <Link href="/contact" className="text-gray-700 hover:text-orange-600 font-medium">
                 Contact
               </Link>
             </div>

@@ -42,7 +42,7 @@ export default function LoginPage() {
       <div className="max-w-md w-full space-y-8">
         <div>
           <div className="flex justify-center">
-            <div className="w-12 h-12 bg-primary-600 rounded-full flex items-center justify-center">
+            <div className="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center">
               <span className="text-white font-bold text-xl">E</span>
             </div>
           </div>
@@ -51,7 +51,7 @@ export default function LoginPage() {
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
             Or{' '}
-            <Link href="/register" className="font-medium text-primary-600 hover:text-primary-500">
+            <Link href="/register" className="font-medium text-orange-600 hover:text-orange-500">
               create a new account
             </Link>
           </p>
@@ -100,7 +100,7 @@ export default function LoginPage() {
                 id="remember-me"
                 name="remember-me"
                 type="checkbox"
-                className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
+                className="h-4 w-4 text-orange-600 focus:ring-orange-500 border-gray-300 rounded"
               />
               <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">
                 Remember me
@@ -108,7 +108,7 @@ export default function LoginPage() {
             </div>
 
             <div className="text-sm">
-              <button className="font-medium text-primary-600 hover:text-primary-500">
+              <button className="font-medium text-orange-600 hover:text-orange-500">
                 Forgot your password?
               </button>
             </div>

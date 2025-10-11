@@ -57,7 +57,7 @@ export default function RegisterPage() {
       <div className="max-w-2xl w-full space-y-8">
         <div>
           <div className="flex justify-center">
-            <div className="w-12 h-12 bg-primary-600 rounded-full flex items-center justify-center">
+            <div className="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center">
               <span className="text-white font-bold text-xl">E</span>
             </div>
           </div>
@@ -66,7 +66,7 @@ export default function RegisterPage() {
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
             Or{' '}
-            <Link href="/login" className="font-medium text-primary-600 hover:text-primary-500">
+            <Link href="/login" className="font-medium text-orange-600 hover:text-orange-500">
               sign in to your existing account
             </Link>
           </p>
@@ -244,11 +244,11 @@ export default function RegisterPage() {
             />
             <label htmlFor="agree-terms" className="ml-2 block text-sm text-gray-900">
               I agree to the{' '}
-              <button className="text-primary-600 hover:text-primary-500">
+              <button className="text-orange-600 hover:text-orange-500">
                 Terms and Conditions
               </button>{' '}
               and{' '}
-              <button className="text-primary-600 hover:text-primary-500">
+              <button className="text-orange-600 hover:text-orange-500">
                 Privacy Policy
               </button>
             </label>
