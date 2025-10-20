@@ -56,9 +56,8 @@ export default function ContactPage() {
               </div>
               <div>
                 <h3 className="text-lg font-medium text-gray-900">Technical Support</h3>
-                <p className="text-gray-600">+1 (555) 123-4567</p>
-                <p className="text-sm text-gray-500">Monday - Friday, 9AM - 6PM EST</p>
-                <p className="text-sm text-gray-500">Press 2 for Technical Support</p>
+                <p className="text-gray-600">+91 8439781538</p>
+                <p className="text-sm text-gray-500">Monday - Saturday, 9AM - 9PM </p>
               </div>
             </div>
 
@@ -68,9 +67,8 @@ export default function ContactPage() {
               </div>
               <div>
                 <h3 className="text-lg font-medium text-gray-900">Email Support</h3>
-                <p className="text-gray-600">support@electroshop.com</p>
+                <p className="text-gray-600">ananya_maheshwari_08@gmail.com</p>
                 <p className="text-sm text-gray-500">Response within 4 hours (business days)</p>
-                <p className="text-sm text-gray-500">For urgent issues: priority@electroshop.com</p>
               </div>
             </div>
 
@@ -79,11 +77,9 @@ export default function ContactPage() {
                 <MapPinIcon className="w-6 h-6 text-orange-600" />
               </div>
               <div>
-                <h3 className="text-lg font-medium text-gray-900">Engineering Office</h3>
+                <h3 className="text-lg font-medium text-gray-900">Office</h3>
                 <p className="text-gray-600">
-                  123 Electronics Way<br />
-                  Tech Park, Suite 456<br />
-                  San Jose, CA 95110
+                  Uttar Pradesh, India
                 </p>
               </div>
             </div>
@@ -95,10 +91,7 @@ export default function ContactPage() {
               <div>
                 <h3 className="text-lg font-medium text-gray-900">Support Hours</h3>
                 <div className="text-gray-600 space-y-1">
-                  <p>Monday - Friday: 9:00 AM - 6:00 PM EST</p>
-                  <p>Saturday: 10:00 AM - 2:00 PM EST</p>
-                  <p>Sunday: Closed</p>
-                  <p className="text-sm text-orange-600">24/7 Emergency Support Available</p>
+                  <p>Monday - Saturday: 9:00 AM - 9:00 PM </p>
                 </div>
               </div>
             </div>

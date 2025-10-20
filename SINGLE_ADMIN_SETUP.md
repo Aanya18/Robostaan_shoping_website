@@ -10,7 +10,7 @@
 Username: admin@maxbot.com
 Password: maxbot2024
 Name: Super Admin
-Phone: +91-9876543210
+Phone: +91 8439781538
 Location: Delhi, India
 ```
 
@@ -124,4 +124,4 @@ npm run dev
 - **Auto Save**: Credentials automatically save हो जाते हैं
 - **Indian Details**: Admin profile में Indian address/phone डाला गया है
 
-Your MAXBOT ElectroShop is now ready with a **single, secure admin system**! 🎉
+Your MAXBOT is now ready with a **single, secure admin system**! 🎉

@@ -28,19 +28,19 @@ export default function FAQPage() {
           id: 1,
           category: "Ordering & Payment",
           question: "What payment methods do you accept?",
-          answer: "We accept all major credit cards (Visa, MasterCard, American Express), PayPal, bank transfers, and purchase orders for institutional customers. For bulk orders over $500, we also offer net-30 payment terms for verified businesses."
+          answer: "We accept all major credit cards (Visa, MasterCard, American Express), UPI, net banking, and bank transfers. For bulk institutional orders (typically over ₹30,000), we also offer net-30 payment terms for verified businesses."
         },
         {
           id: 2,
           category: "Ordering & Payment", 
           question: "How do I place a bulk order for my institution?",
-          answer: "For bulk orders or institutional purchases, please contact our sales team at sales@electroshop.com or call +1 (555) 123-4567. We offer volume discounts starting at 50 pieces and can provide custom quotations, purchase order processing, and educational discounts."
+          answer: "For bulk or institutional purchases, contact our sales team at ananya_maheshwari_08@gmail.com or call +91 8439781538. We offer volume discounts, custom quotations, and purchase order processing for verified institutions."
         },
         {
           id: 3,
           category: "Shipping & Delivery",
           question: "What are your shipping options and costs?",
-          answer: "We offer Standard Shipping (3-5 business days, $9.99), Express Shipping (1-2 business days, $19.99), and Same Day Delivery in select cities ($29.99). Free shipping is available on orders over $50. International shipping is available to most countries."
+          answer: "We offer Standard Shipping (3-5 business days, ₹199), Express Shipping (1-2 business days, ₹399), and Same Day Delivery in select cities (price varies by city, typically from ₹999). Free shipping is available on orders over ₹3,500. International shipping is available to most countries."
         },
         {
           id: 4,
@@ -58,7 +58,7 @@ export default function FAQPage() {
           id: 6,
           category: "Products & Technical",
           question: "Are all your components genuine and authentic?",
-          answer: "Yes, we source all components directly from authorized distributors and manufacturers. Every product comes with authenticity certification and full manufacturer warranty. We never sell counterfeit or grey-market components."
+          answer: "Yes — we source components from authorized distributors and manufacturers. Each product listing includes authenticity and warranty information where applicable. We do not sell counterfeit or grey-market components."
         },
         {
           id: 7,
@@ -70,7 +70,7 @@ export default function FAQPage() {
           id: 8,
           category: "Products & Technical",
           question: "What if I need help selecting the right components?",
-          answer: "Our technical support team includes experienced electronics engineers who can help with component selection, circuit design advice, and troubleshooting. Contact us at support@electroshop.com or use our live chat for technical assistance."
+          answer: "Our technical support team includes experienced electronics engineers who can help with component selection, circuit design advice, and troubleshooting. Contact us at ananya_maheshwari_08@gmail.com or use our live chat for technical assistance."
         },
         {
           id: 9,
@@ -100,13 +100,13 @@ export default function FAQPage() {
           id: 13,
           category: "Account & Support", 
           question: "How can I contact technical support?",
-          answer: "Our technical support team is available Monday-Friday, 9 AM-6 PM EST. Contact us via email at support@electroshop.com, live chat on our website, or phone at +1 (555) 123-4567 ext. 2. For urgent technical issues, use our priority support line."
+          answer: "Our technical support team is available Monday–Friday, 10:00 AM–6:00 PM IST. Contact us via email at ananya_maheshwari_08@gmail.com, use the live chat on our website, or call +91 8439781538 during business hours. For urgent technical issues, use our priority support channel."
         },
         {
           id: 14,
           category: "Educational & Volume",
           question: "Do you offer educational discounts?",
-          answer: "Yes! We provide special pricing for educational institutions, students, and non-profit organizations. Contact our education team with your .edu email or institutional documentation for verification and discount codes."
+          answer: "Yes! We provide special pricing for educational institutions, students, and non-profit organizations. Contact our education team at ananya_maheshwari_08@gmail.com or call +91 8439781538 with your institutional documentation for verification and discount codes."
         },
         {
           id: 15,
@@ -236,7 +236,7 @@ export default function FAQPage() {
             Contact Support
           </a>
           <a
-            href="mailto:support@electroshop.com"
+            href="mailto:ananya_maheshwari_08@gmail.com"
             className="btn-outline"
           >
             Email Us

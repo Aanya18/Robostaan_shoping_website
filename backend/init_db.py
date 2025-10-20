@@ -121,3 +121,22 @@ if __name__ == "__main__":
     
     # You can run this script after starting the FastAPI server
     # to populate the database with sample data via API calls
+
+
+def create_tables():
+    """Create all tables defined in SQLAlchemy models.
+
+    This helper is intended for development with the bundled SQLite DB.
+    It will run SQLAlchemy metadata.create_all to ensure new tables (like
+    `support_tickets`) are created after changing models.
+    """
+    from app.core.database import engine
+    from app.models import models
+
+    models.Base.metadata.create_all(bind=engine)
+    print("All tables created/updated.")
+
+
+if __name__ == "__main__":
+    # Default action: create tables and optionally print sample counts
+    create_tables()

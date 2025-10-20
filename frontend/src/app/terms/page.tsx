@@ -36,7 +36,7 @@ export default function TermsPage() {
 
         <section>
           <h2 className="font-semibold">Contact</h2>
-          <p className="text-sm text-gray-700">Questions about these terms should be directed to <a className="text-primary-600" href="mailto:legal@electroshop.com">legal@electroshop.com</a>.</p>
+          <p className="text-sm text-gray-700">Questions about these terms should be directed to <a className="text-primary-600" href="mailto:ananya_maheshwari_08@gmail.com">ananya_maheshwari_08@gmail.com</a> or call +91 8439781538.</p>
         </section>
       </div>
     </div>

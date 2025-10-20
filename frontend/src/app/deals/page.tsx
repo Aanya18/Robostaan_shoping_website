@@ -156,7 +156,7 @@ export default function DealsPage() {
         <div className="mt-4 flex items-center justify-center space-x-4 text-sm">
           <div className="flex items-center">
             <TruckIcon className="w-4 h-4 mr-1" />
-            <span>Free Shipping on $50+</span>
+            <span>Free Shipping on orders over ₹3,500</span>
           </div>
           <div className="flex items-center">
             <TagIcon className="w-4 h-4 mr-1" />
@@ -181,8 +181,8 @@ export default function DealsPage() {
                   <p className="text-gray-600 text-sm mb-4">{deal.description}</p>
                   
                   <div className="flex items-center justify-center space-x-2 mb-4">
-                    <span className="text-2xl font-bold text-red-600">${deal.salePrice}</span>
-                    <span className="text-lg text-gray-500 line-through">${deal.originalPrice}</span>
+                    <span className="text-2xl font-bold text-red-600">₹{(deal.salePrice * 83).toFixed(2)}</span>
+                    <span className="text-lg text-gray-500 line-through">₹{(deal.originalPrice * 83).toFixed(2)}</span>
                   </div>
                   
                   <div className="flex items-center justify-center text-sm text-gray-600 mb-4">
@@ -243,7 +243,7 @@ export default function DealsPage() {
               <div key={deal.id} className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-6">
                 <div className="relative">
                   <div className="bg-green-500 text-white px-2 py-1 absolute top-0 right-0 rounded-bl-lg text-xs font-bold">
-                    SAVE ${(deal.originalPrice - deal.salePrice).toFixed(2)}
+                    SAVE ₹{((deal.originalPrice - deal.salePrice) * 83).toFixed(2)}
                   </div>
                   
                   <div className="text-center">
@@ -252,8 +252,8 @@ export default function DealsPage() {
                     <p className="text-gray-600 text-sm mb-3 line-clamp-2">{deal.description}</p>
                     
                     <div className="flex items-center justify-center space-x-2 mb-3">
-                      <span className="text-xl font-bold text-green-600">${deal.salePrice}</span>
-                      <span className="text-sm text-gray-500 line-through">${deal.originalPrice}</span>
+                      <span className="text-xl font-bold text-green-600">₹{(deal.salePrice * 83).toFixed(2)}</span>
+                      <span className="text-sm text-gray-500 line-through">₹{(deal.originalPrice * 83).toFixed(2)}</span>
                       <span className="text-xs bg-red-100 text-red-800 px-2 py-1 rounded">
                         -{deal.discount}%
                       </span>

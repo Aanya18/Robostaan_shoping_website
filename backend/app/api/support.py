@@ -13,17 +13,37 @@ def submit_contact_form(
     contact_data: dict,
     db: Session = Depends(get_db)
 ):
-    """Submit a contact form message"""
-    # In a real implementation, you would:
-    # 1. Save to database
-    # 2. Send email notification
-    # 3. Create support ticket
-    
-    # For now, just return success
+    """Submit a contact form message and persist it as a SupportTicket"""
+
+    # Expected payload keys: name, email, subject, message
+    name = contact_data.get("name")
+    email = contact_data.get("email")
+    subject = contact_data.get("subject")
+    message = contact_data.get("message")
+
+    if not email or not message:
+        raise HTTPException(status_code=400, detail="Missing required fields: email and message")
+
+    ticket_identifier = f"TICKET-{datetime.now().strftime('%Y%m%d%H%M%S')}"
+
+    ticket = models.SupportTicket(
+        ticket_id=ticket_identifier,
+        name=name,
+        email=email,
+        subject=subject,
+        message=message,
+        status="received"
+    )
+
+    db.add(ticket)
+    db.commit()
+    db.refresh(ticket)
+
     return {
         "message": "Contact form submitted successfully",
-        "ticket_id": f"TICKET-{datetime.now().strftime('%Y%m%d%H%M%S')}",
-        "status": "received"
+        "ticket_id": ticket_identifier,
+        "status": "received",
+        "id": ticket.id
     }
 
 @router.get("/faq")

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Single Admin User Setup Script
-Creates ONLY ONE admin user for ElectroShop with fixed credentials.
+Creates ONLY ONE admin user for MaxBot with fixed credentials.
 """
 
 import sys
@@ -22,7 +22,7 @@ ADMIN_PASSWORD = "maxbot2024"
 ADMIN_DETAILS = {
     "first_name": "Super",
     "last_name": "Admin", 
-    "phone": "+91-9876543210",
+    "phone": "+91 8439781538",
     "address": "MAXBOT Admin Office",
     "city": "Delhi",
     "postal_code": "110001",
@@ -99,7 +99,7 @@ def create_single_admin():
         
         # Save credentials to file for reference
         with open("admin_credentials.txt", "w", encoding="utf-8") as f:
-            f.write("MAXBOT ELECTROSHOP - ADMIN CREDENTIALS\n")
+            f.write("MAXBOT MaxBot - ADMIN CREDENTIALS\n")
             f.write("=====================================\n")
             f.write(f"Username: {ADMIN_USERNAME}\n")
             f.write(f"Password: {ADMIN_PASSWORD}\n")
@@ -117,5 +117,5 @@ def create_single_admin():
         db.close()
 
 if __name__ == "__main__":
-    print("🔧 Setting up SINGLE ADMIN for MAXBOT ElectroShop...")
+    print("🔧 Setting up SINGLE ADMIN for MAXBOT...")
     create_single_admin()
