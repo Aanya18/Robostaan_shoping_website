@@ -246,7 +246,7 @@ export default function NewArrivalsPage() {
                     </div>
                   </div>
                   
-                  <div className="text-2xl font-bold text-primary-600 mb-4">${product.price}</div>
+                  <div className="text-2xl font-bold text-primary-600 mb-4">₹{(product.price * 83).toFixed(2)}</div>
                   
                   <div className="flex items-center justify-center text-sm text-gray-600 mb-4">
                     <CalendarIcon className="w-4 h-4 mr-1" />
@@ -333,7 +333,7 @@ export default function NewArrivalsPage() {
                       </div>
                     </div>
                     
-                    <div className="text-xl font-bold text-primary-600 mb-2">${product.price}</div>
+                    <div className="text-xl font-bold text-primary-600 mb-2">₹{(product.price * 83).toFixed(2)}</div>
                     
                     <div className="text-xs text-gray-600 mb-2">
                       Brand: {product.brand}

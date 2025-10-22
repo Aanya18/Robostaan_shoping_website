@@ -126,7 +126,7 @@ export default function ReturnsPage() {
                 <li>• DOA (Dead on Arrival) components</li>
               </ul>
               <p className="text-sm text-gray-600 mt-4">
-                We'll email you a prepaid return label for eligible returns.
+                We'll email you a prepaid return label for eligible returns. Contact: ananya_maheshwari_08@gmail.com | +91 8439781538
               </p>
             </div>
             
@@ -139,7 +139,7 @@ export default function ReturnsPage() {
                 <li>• Compatibility issues (not our fault)</li>
               </ul>
               <p className="text-sm text-gray-600 mt-4">
-                Return shipping cost will be deducted from your refund.
+                Return shipping cost will be deducted from your refund. Contact: ananya_maheshwari_08@gmail.com | +91 8439781538
               </p>
             </div>
           </div>
@@ -263,21 +263,21 @@ export default function ReturnsPage() {
                 <li>• Advanced exchange program</li>
               </ul>
             </div>
-            
+
             <div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">💰 Affordable Protection</h3>
               <div className="space-y-3">
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Orders $100-$500</span>
-                  <span className="font-semibold text-primary-600">$15/year</span>
+                  <span className="text-gray-600">Orders ₹8,300–₹41,500</span>
+                  <span className="font-semibold text-primary-600">₹1,245/year</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Orders $500-$1000</span>
-                  <span className="font-semibold text-primary-600">$25/year</span>
+                  <span className="text-gray-600">Orders ₹41,500–₹83,000</span>
+                  <span className="font-semibold text-primary-600">₹2,075/year</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Orders $1000+</span>
-                  <span className="font-semibold text-primary-600">$40/year</span>
+                  <span className="text-gray-600">Orders ₹83,000+</span>
+                  <span className="font-semibold text-primary-600">₹3,320/year</span>
                 </div>
               </div>
               <p className="text-sm text-gray-600 mt-4">
@@ -300,12 +300,12 @@ export default function ReturnsPage() {
           <a href="/contact" className="btn-primary">
             Start Return Process
           </a>
-          <a href="mailto:returns@electroshop.com" className="btn-outline">
+          <a href="mailto:ananya_maheshwari_08@gmail.com" className="btn-outline">
             Email Returns Team
           </a>
         </div>
         <p className="text-sm text-gray-600 mt-4">
-          Returns Department: +1 (555) 123-4567 ext. 4 | Monday-Friday, 9 AM-5 PM EST
+          Returns Department: +91 8439781538 | Monday-Friday, 10 AM-6 PM IST
         </p>
       </section>
     </div>

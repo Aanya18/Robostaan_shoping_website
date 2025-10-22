@@ -106,3 +106,20 @@ class OrderItem(Base):
     # Relationships
     order = relationship("Order", back_populates="order_items")
     product = relationship("Product", back_populates="order_items")
+
+
+class SupportTicket(Base):
+    __tablename__ = "support_tickets"
+
+    id = Column(Integer, primary_key=True, index=True)
+    ticket_id = Column(String, unique=True, nullable=False)
+    user_id = Column(Integer, ForeignKey("users.id"), nullable=True)
+    name = Column(String)
+    email = Column(String, nullable=False)
+    subject = Column(String)
+    message = Column(Text)
+    status = Column(String, default="received")
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+
+    # Relationships
+    user = relationship("User")

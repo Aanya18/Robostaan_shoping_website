@@ -104,12 +104,12 @@ export default function CartPage() {
                           {item.product.name}
                         </Link>
                       </h3>
-                      <p className="ml-4">${(item.product.price * item.quantity).toFixed(2)}</p>
+                      <p className="ml-4">₹{(item.product.price * item.quantity).toFixed(2)}</p>
                     </div>
                     {item.product.brand && (
                       <p className="text-sm text-gray-500">{item.product.brand}</p>
                     )}
-                    <p className="text-sm text-gray-600 mt-1">${item.product.price.toFixed(2)} each</p>
+                    <p className="text-sm text-gray-600 mt-1">₹{item.product.price.toFixed(2)} each</p>
                   </div>
                   
                   <div className="flex flex-1 items-end justify-between text-sm">
@@ -157,25 +157,25 @@ export default function CartPage() {
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <dt className="text-sm text-gray-600">Subtotal</dt>
-                <dd className="text-sm font-medium text-gray-900">${total.toFixed(2)}</dd>
+                <dd className="text-sm font-medium text-gray-900">₹{total.toFixed(2)}</dd>
               </div>
               
               <div className="flex items-center justify-between">
                 <dt className="text-sm text-gray-600">Shipping</dt>
                 <dd className="text-sm font-medium text-gray-900">
-                  {total >= 50 ? 'Free' : '$9.99'}
+                  {total >= 50 ? 'Free' : '₹199'}
                 </dd>
               </div>
               
               <div className="flex items-center justify-between">
                 <dt className="text-sm text-gray-600">Tax</dt>
-                <dd className="text-sm font-medium text-gray-900">${(total * 0.08).toFixed(2)}</dd>
+                <dd className="text-sm font-medium text-gray-900">₹{(total * 0.08).toFixed(2)}</dd>
               </div>
               
               <div className="border-t border-gray-200 pt-4 flex items-center justify-between">
                 <dt className="text-base font-medium text-gray-900">Order total</dt>
                 <dd className="text-base font-medium text-gray-900">
-                  ${(total + (total >= 50 ? 0 : 9.99) + (total * 0.08)).toFixed(2)}
+                  ₹{(total + (total >= 50 ? 0 : 199) + (total * 0.08)).toFixed(2)}
                 </dd>
               </div>
             </div>

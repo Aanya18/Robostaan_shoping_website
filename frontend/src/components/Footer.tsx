@@ -11,7 +11,7 @@ export default function Footer() {
               <div className="w-8 h-8 bg-orange-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">E</span>
               </div>
-              <span className="text-xl font-bold">ElectroShop</span>
+              <span className="text-xl font-bold">MaxBot</span>
             </div>
             <p className="text-secondary-300 mb-4 max-w-md">
               Your trusted destination for the latest electronics and gadgets. 
@@ -51,7 +51,7 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Customer Service</h3>
             <ul className="space-y-2">
-              <li><Link href="/contact" className="text-secondary-300 hover:text-white">Contact Us</Link></li>
+            <li><Link href="/contact" className="text-secondary-300 hover:text-white">Contact Us</Link></li>
               <li><Link href="/faq" className="text-secondary-300 hover:text-white">FAQ</Link></li>
               <li><Link href="/shipping" className="text-secondary-300 hover:text-white">Shipping Info</Link></li>
               <li><Link href="/returns" className="text-secondary-300 hover:text-white">Returns & Warranty</Link></li>
@@ -61,7 +61,7 @@ export default function Footer() {
 
         <div className="border-t border-secondary-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-secondary-400 text-sm">
-            © 2024 ElectroShop. All rights reserved.
+            © 2025 MaxBot. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link href="/privacy" className="text-secondary-400 hover:text-white text-sm">

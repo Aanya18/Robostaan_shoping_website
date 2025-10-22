@@ -13,7 +13,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>ElectroShop - Your Electronics Store</title>
+        <title>MaxBot - Your Electronics Store</title>
         <meta name="description" content="Your trusted destination for the latest electronics and gadgets" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />

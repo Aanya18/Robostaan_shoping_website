@@ -20,12 +20,12 @@ export default function ShippingPage() {
                 <span className="text-2xl">🚚</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Standard Shipping</h3>
-              <div className="text-3xl font-bold text-primary-600 mb-2">$9.99</div>
+              <div className="text-3xl font-bold text-primary-600 mb-2">₹199</div>
               <p className="text-gray-600 mb-4">3-5 Business Days</p>
               <div className="text-sm text-gray-500">
                 <p>• Ground shipping via UPS/FedEx</p>
                 <p>• Tracking included</p>
-                <p>• Signature required for orders &gt;$500</p>
+                <p>• Signature required for high-value orders</p>
               </div>
             </div>
           </div>
@@ -41,7 +41,7 @@ export default function ShippingPage() {
                 <span className="text-2xl">⚡</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Express Shipping</h3>
-              <div className="text-3xl font-bold text-primary-600 mb-2">$19.99</div>
+              <div className="text-3xl font-bold text-primary-600 mb-2">₹399</div>
               <p className="text-gray-600 mb-4">1-2 Business Days</p>
               <div className="text-sm text-gray-500">
                 <p>• Priority overnight/2-day</p>
@@ -57,7 +57,7 @@ export default function ShippingPage() {
                 <span className="text-2xl">🏃‍♂️</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Same Day Delivery</h3>
-              <div className="text-3xl font-bold text-primary-600 mb-2">$29.99</div>
+              <div className="text-3xl font-bold text-primary-600 mb-2">₹999</div>
               <p className="text-gray-600 mb-4">Same Day</p>
               <div className="text-sm text-gray-500">
                 <p>• Available in select cities</p>
@@ -71,8 +71,8 @@ export default function ShippingPage() {
         {/* Free Shipping Banner */}
         <div className="mt-8 bg-gradient-to-r from-primary-600 to-primary-700 rounded-lg p-6 text-white text-center">
           <h3 className="text-2xl font-bold mb-2">🎉 FREE SHIPPING</h3>
-          <p className="text-lg">On all orders over $50 within the continental US</p>
-          <p className="text-sm opacity-90 mt-2">Upgrade to Express shipping for just $10 more on qualified orders</p>
+          <p className="text-lg">On all orders over ₹3,500 within India</p>
+          <p className="text-sm opacity-90 mt-2">Upgrade to Express shipping for approximately ₹200 more on qualified orders. Contact: ananya_maheshwari_08@gmail.com | +91 8439781538</p>
         </div>
       </section>
 
@@ -99,19 +99,19 @@ export default function ShippingPage() {
               <div className="space-y-3">
                 <div className="flex justify-between items-center">
                   <span className="text-gray-600">Canada/Mexico</span>
-                  <span className="font-medium">$15.99 (5-7 days)</span>
+                  <span className="font-medium">₹1,405 (5-7 days)</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-gray-600">Europe</span>
-                  <span className="font-medium">$24.99 (7-10 days)</span>
+                  <span className="font-medium">₹2,075 (7-10 days)</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-gray-600">Asia-Pacific</span>
-                  <span className="font-medium">$29.99 (10-15 days)</span>
+                  <span className="font-medium">₹2,490 (10-15 days)</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-gray-600">Other Countries</span>
-                  <span className="font-medium">$34.99 (10-20 days)</span>
+                  <span className="font-medium">₹2,904 (10-20 days)</span>
                 </div>
               </div>
               <div className="mt-4 p-4 bg-yellow-50 rounded-lg">
@@ -265,8 +265,8 @@ export default function ShippingPage() {
             <a href="/contact" className="btn-primary">
               Contact Shipping Team
             </a>
-            <a href="tel:+15551234567" className="btn-outline">
-              Call: +1 (555) 123-4567
+            <a href="tel:+918439781538" className="btn-outline">
+              Call: +91 8439781538
             </a>
           </div>
           <p className="text-sm text-gray-600">

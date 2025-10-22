@@ -73,7 +73,7 @@ export default function PrivacyPage() {
         <section>
           <h2 className="font-semibold">Contact</h2>
           <p className="text-sm text-gray-700">
-            For questions about this policy, contact us at <a className="text-primary-600" href="mailto:support@electroshop.com">support@electroshop.com</a>.
+            For questions about this policy, contact us at <a className="text-primary-600" href="mailto:ananya_maheshwari_08@gmail.com">ananya_maheshwari_08@gmail.com</a> or call +91 8439781538.
           </p>
         </section>
       </div>
