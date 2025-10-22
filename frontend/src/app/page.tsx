@@ -238,22 +238,22 @@ export default function HomePage() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              {
-                name: "Dr. Sarah Chen",
-                role: "Electronics Engineer",
-                content: "Excellent quality components and fast delivery. Perfect for our R&D projects and prototyping needs.",
+            {
+                name: "Dr. Aditi Sharma",
+                role: "Electronics Researcher",
+                content: "Top-quality components and reliable delivery — ideal for our R&D and rapid prototyping workflows.",
                 rating: 5
               },
               {
-                name: "Alex Rodriguez",
+                name: "Rohan Mehta",
                 role: "Maker & Educator", 
-                content: "Great selection of development boards and sensors. Technical documentation is always accurate.",
+                content: "Wide selection of development boards and sensors, with clear documentation and excellent technical support.",
                 rating: 5
               },
               {
-                name: "Prof. James Wilson",
+                name: "Prof. Suresh Reddy",
                 role: "University Lab Manager",
-                content: "Reliable supplier for our electronics labs. Bulk pricing makes it perfect for educational institutions.",
+                content: "Consistently reliable supplier for our university labs; institutional pricing and fulfillment are outstanding.",
                 rating: 5
               }
             ].map((testimonial, index) => (
