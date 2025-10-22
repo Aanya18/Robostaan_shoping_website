@@ -260,6 +260,17 @@ export default function AdminDashboard() {
               </Link>
 
               <Link 
+                href="/admin/inventory" 
+                className="flex items-center p-4 bg-orange-50 rounded-lg hover:bg-orange-100 transition-colors"
+              >
+                <ChartBarIcon className="h-8 w-8 text-orange-600 mr-3" />
+                <div>
+                  <p className="font-medium">Inventory Management</p>
+                  <p className="text-sm text-gray-600">Monitor stock levels</p>
+                </div>
+              </Link>
+
+              <Link 
                 href="/admin/orders" 
                 className="flex items-center p-4 bg-purple-50 rounded-lg hover:bg-purple-100 transition-colors"
               >
@@ -278,6 +289,17 @@ export default function AdminDashboard() {
                 <div>
                   <p className="font-medium">Manage Users</p>
                   <p className="text-sm text-gray-600">View all users</p>
+                </div>
+              </Link>
+
+              <Link 
+                href="/admin/shipping" 
+                className="flex items-center p-4 bg-indigo-50 rounded-lg hover:bg-indigo-100 transition-colors"
+              >
+                <TruckIcon className="h-8 w-8 text-indigo-600 mr-3" />
+                <div>
+                  <p className="font-medium">Shipping Management</p>
+                  <p className="text-sm text-gray-600">Track deliveries</p>
                 </div>
               </Link>
             </div>
