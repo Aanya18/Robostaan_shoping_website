@@ -1,6 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { adminAPI } from '@/lib/types';
+import { useState as useLocalState } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
@@ -62,6 +64,7 @@ export default function AdminDashboard() {
   const [loading, setLoading] = useState(true);
   const [dashboardData, setDashboardData] = useState<DashboardStats | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [inventoryLoading, setInventoryLoading] = useLocalState(false);
 
   useEffect(() => {
     // Allow access to view users without login, but require admin for management
@@ -70,33 +73,16 @@ export default function AdminDashboard() {
 
   const fetchDashboardData = async () => {
     try {
-      // Try to fetch with auth first, fallback to public data
-      const token = localStorage.getItem('token');
-      const headers: any = {
-        'Content-Type': 'application/json',
-      };
-      
-      if (token) {
-        headers['Authorization'] = `Bearer ${token}`;
+      // Prefer admin dashboard (requires auth); fallback to public stats
+      try {
+        const res = await adminAPI.getDashboard();
+        setDashboardData(res.data);
+        return;
+      } catch (adminErr) {
+        const publicRes = await adminAPI.getPublicStats();
+        setDashboardData(publicRes.data);
+        return;
       }
-
-      const response = await fetch('http://localhost:8000/api/admin/dashboard', {
-        headers,
-      });
-
-      if (!response.ok) {
-        // If auth fails, try to fetch basic stats without auth
-        const basicResponse = await fetch('http://localhost:8000/api/admin/public-stats');
-        if (basicResponse.ok) {
-          const basicData = await basicResponse.json();
-          setDashboardData(basicData);
-          return;
-        }
-        throw new Error('Failed to fetch dashboard data');
-      }
-
-      const data = await response.json();
-      setDashboardData(data);
     } catch (error) {
       console.error('Error fetching dashboard data:', error);
       setError('Failed to load dashboard data');
@@ -294,6 +280,70 @@ export default function AdminDashboard() {
                   <p className="text-sm text-gray-600">View all users</p>
                 </div>
               </Link>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-white rounded-lg shadow mb-8">
+          <div className="px-6 py-4 border-b border-gray-200">
+            <h2 className="text-lg font-medium text-gray-900">Inventory Utilities</h2>
+          </div>
+          <div className="p-6">
+            <div className="flex items-center space-x-3">
+              <button
+                onClick={async () => {
+                  if (!confirm('Populate professional electronics inventory? This will add many categories/products.')) return;
+                  try {
+                    setInventoryLoading(true);
+                    const res = await adminAPI.populateInventory();
+                    alert(res.data?.message || 'Inventory populated');
+                    fetchDashboardData();
+                  } catch (err) {
+                    console.error(err);
+                    alert('Failed to populate inventory');
+                  } finally { setInventoryLoading(false); }
+                }}
+                className="px-3 py-2 bg-green-600 text-white rounded"
+                disabled={inventoryLoading}
+              >
+                {inventoryLoading ? 'Working...' : 'Populate Inventory'}
+              </button>
+
+              <button
+                onClick={async () => {
+                  if (!confirm('Clear ALL inventory data? This is irreversible.')) return;
+                  try {
+                    setInventoryLoading(true);
+                    const res = await adminAPI.clearInventory();
+                    alert(res.data?.message || 'Inventory cleared');
+                    fetchDashboardData();
+                  } catch (err) {
+                    console.error(err);
+                    alert('Failed to clear inventory');
+                  } finally { setInventoryLoading(false); }
+                }}
+                className="px-3 py-2 bg-red-600 text-white rounded"
+                disabled={inventoryLoading}
+              >
+                {inventoryLoading ? 'Working...' : 'Clear Inventory'}
+              </button>
+
+              <button
+                onClick={async () => {
+                  try {
+                    setInventoryLoading(true);
+                    const res = await adminAPI.inventoryStatus();
+                    alert(JSON.stringify(res.data?.statistics || res.data || {}, null, 2));
+                  } catch (err) {
+                    console.error(err);
+                    alert('Failed to get inventory status');
+                  } finally { setInventoryLoading(false); }
+                }}
+                className="px-3 py-2 bg-blue-600 text-white rounded"
+                disabled={inventoryLoading}
+              >
+                Inventory Status
+              </button>
             </div>
           </div>
         </div>

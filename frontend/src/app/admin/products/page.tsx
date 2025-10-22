@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
+import { adminAPI, productsAPI } from '@/lib/types';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { 
@@ -70,30 +71,14 @@ export default function AdminProducts() {
       const token = localStorage.getItem('token');
       
       // Fetch products and categories
-      const [productsResponse, categoriesResponse] = await Promise.all([
-        fetch(`http://localhost:8000/api/admin/products?include_inactive=${showInactive}`, {
-          headers: {
-            'Authorization': `Bearer ${token}`,
-            'Content-Type': 'application/json',
-          },
-        }),
-        fetch('http://localhost:8000/api/products/categories', {
-          headers: {
-            'Authorization': `Bearer ${token}`,
-            'Content-Type': 'application/json',
-          },
-        })
+      // Use adminAPI and productsAPI wrappers
+      const [productsRes, categoriesRes] = await Promise.all([
+        adminAPI.getProducts({ include_inactive: showInactive }),
+        productsAPI.getCategories(),
       ]);
 
-      if (!productsResponse.ok || !categoriesResponse.ok) {
-        throw new Error('Failed to fetch data');
-      }
-
-      const productsData = await productsResponse.json();
-      const categoriesData = await categoriesResponse.json();
-      
-      setProducts(productsData.products || []);
-      setCategories(categoriesData.data || []);
+      setProducts(productsRes.data.products || []);
+      setCategories(categoriesRes.data.data || []);
     } catch (error) {
       console.error('Error fetching data:', error);
       setError('Failed to load products');
@@ -129,19 +114,7 @@ export default function AdminProducts() {
 
   const toggleProductStatus = async (productId: number) => {
     try {
-      const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:8000/api/admin/products/${productId}/toggle-active`, {
-        method: 'PUT',
-        headers: {
-          'Authorization': `Bearer ${token}`,
-          'Content-Type': 'application/json',
-        },
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to toggle product status');
-      }
-
+      await adminAPI.toggleProductActive(productId);
       // Refresh products
       fetchData();
     } catch (error) {
@@ -156,20 +129,7 @@ export default function AdminProducts() {
     }
 
     try {
-      const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:8000/api/admin/products/${productId}`, {
-        method: 'DELETE',
-        headers: {
-          'Authorization': `Bearer ${token}`,
-          'Content-Type': 'application/json',
-        },
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.detail || 'Failed to delete product');
-      }
-
+      await adminAPI.deleteProduct(productId);
       // Refresh products
       fetchData();
       alert('Product deleted successfully');
@@ -312,7 +272,7 @@ export default function AdminProducts() {
                           <div className="h-10 w-10 bg-gray-200 rounded-lg flex items-center justify-center">
                             {product.has_image ? (
                               <img 
-                                src={`http://localhost:8000/api/products/${product.id}/image`}
+                                src={`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/products/${product.id}/image`}
                                 alt={product.name}
                                 className="h-10 w-10 rounded-lg object-cover"
                               />

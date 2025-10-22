@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
+import { adminAPI } from '@/lib/types';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { 
@@ -56,19 +57,8 @@ export default function AdminUsers() {
   const fetchUsers = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:8000/api/admin/users', {
-        headers: {
-          'Authorization': `Bearer ${token}`,
-          'Content-Type': 'application/json',
-        },
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to fetch users');
-      }
-
-      const data = await response.json();
-      setUsers(data || []);
+      const res = await adminAPI.getUsers();
+      setUsers(res.data || []);
     } catch (error) {
       console.error('Error fetching users:', error);
       setError('Failed to load users');
@@ -100,17 +90,7 @@ export default function AdminUsers() {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:8000/api/admin/users/${userId}/toggle-admin`, {
-        method: 'PUT',
-        headers: {
-          'Authorization': `Bearer ${token}`,
-          'Content-Type': 'application/json',
-        },
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to toggle admin status');
-      }
+      await adminAPI.toggleUserAdmin(userId);
 
       // Refresh users
       fetchUsers();
@@ -129,17 +109,7 @@ export default function AdminUsers() {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:8000/api/admin/users/${userId}/toggle-active`, {
-        method: 'PUT',
-        headers: {
-          'Authorization': `Bearer ${token}`,
-          'Content-Type': 'application/json',
-        },
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to toggle active status');
-      }
+      await adminAPI.toggleUserActive(userId);
 
       // Refresh users
       fetchUsers();

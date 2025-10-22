@@ -40,7 +40,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden">
         {product.has_image ? (
           <Image
-            src={`http://localhost:8000/api/products/${product.id}/image`}
+            src={`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/products/${product.id}/image`}
             alt={product.name}
             width={300}
             height={300}

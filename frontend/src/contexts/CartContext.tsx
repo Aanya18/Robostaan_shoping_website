@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { CartItem, cartAPI } from '@/lib/types';
 import { useAuth } from './AuthContext';
 
@@ -33,22 +33,22 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     }
   }, [user]);
 
-  const refreshCart = async () => {
+  const refreshCart = useCallback(async () => {
     try {
       const [itemsResponse, totalResponse] = await Promise.all([
         cartAPI.getCartItems(),
         cartAPI.getCartTotal(),
       ]);
-      
+
       setItems(itemsResponse.data);
       setTotal(totalResponse.data.total_amount);
       setItemCount(totalResponse.data.item_count);
     } catch (error) {
       console.error('Error fetching cart:', error);
     }
-  };
+  }, []);
 
-  const addToCart = async (productId: number, quantity = 1) => {
+  const addToCart = useCallback(async (productId: number, quantity = 1) => {
     try {
       await cartAPI.addToCart({ product_id: productId, quantity });
       await refreshCart();
@@ -56,9 +56,9 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       console.error('Error adding to cart:', error);
       throw error;
     }
-  };
+  }, [refreshCart]);
 
-  const updateQuantity = async (itemId: number, quantity: number) => {
+  const updateQuantity = useCallback(async (itemId: number, quantity: number) => {
     try {
       await cartAPI.updateCartItem(itemId, quantity);
       await refreshCart();
@@ -66,9 +66,9 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       console.error('Error updating cart item:', error);
       throw error;
     }
-  };
+  }, [refreshCart]);
 
-  const removeFromCart = async (itemId: number) => {
+  const removeFromCart = useCallback(async (itemId: number) => {
     try {
       await cartAPI.removeFromCart(itemId);
       await refreshCart();
@@ -76,9 +76,9 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       console.error('Error removing from cart:', error);
       throw error;
     }
-  };
+  }, [refreshCart]);
 
-  const clearCart = async () => {
+  const clearCart = useCallback(async () => {
     try {
       await cartAPI.clearCart();
       setItems([]);
@@ -88,7 +88,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       console.error('Error clearing cart:', error);
       throw error;
     }
-  };
+  }, []);
 
   return (
     <CartContext.Provider

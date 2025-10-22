@@ -110,3 +110,44 @@ export const ordersAPI = {
   updateOrderStatus: (id: number, status: string) => 
     api.put(`/api/orders/${id}/status`, null, { params: { status } }),
 };
+
+// Admin API wrappers
+export const adminAPI = {
+  getProducts: (params?: any) => api.get('/api/admin/products', { params }),
+  createProduct: (productData: any) => api.post('/api/admin/products', productData),
+  updateProduct: (id: number, productData: any) => api.put(`/api/admin/products/${id}`, productData),
+  toggleProductActive: (id: number) => api.put(`/api/admin/products/${id}/toggle-active`),
+  deleteProduct: (id: number) => api.delete(`/api/admin/products/${id}`),
+
+  // Categories (admin)
+  createCategory: (categoryData: any) => api.post('/api/admin/categories', categoryData),
+  updateCategory: (id: number, categoryData: any) => api.put(`/api/admin/categories/${id}`, categoryData),
+  deleteCategory: (id: number) => api.delete(`/api/admin/categories/${id}`),
+
+  // Users
+  getUsers: (params?: any) => api.get('/api/admin/users', { params }),
+  toggleUserAdmin: (id: number) => api.put(`/api/admin/users/${id}/toggle-admin`),
+  toggleUserActive: (id: number) => api.put(`/api/admin/users/${id}/toggle-active`),
+
+  // Orders
+  getOrders: (params?: any) => api.get('/api/admin/orders', { params }),
+  updateOrderStatus: (id: number, status: string) => api.put(`/api/admin/orders/${id}/status`, null, { params: { status } }),
+  getOrderDetails: (id: number) => api.get(`/api/admin/orders/${id}`),
+
+  // Inventory utilities
+  populateInventory: () => api.post('/api/admin/populate-electronics-inventory'),
+  clearInventory: () => api.delete('/api/admin/clear-inventory'),
+  inventoryStatus: () => api.get('/api/admin/inventory-status'),
+  // Dashboard / stats
+  getDashboard: () => api.get('/api/admin/dashboard'),
+  getPublicStats: () => api.get('/api/admin/public-stats'),
+};
+
+// Support API
+export const supportAPI = {
+  submitContact: (data: any) => api.post('/api/support/contact', data),
+  getFaq: () => api.get('/api/support/faq'),
+  getSupportTickets: () => api.get('/api/support/support-tickets'),
+  getShippingInfo: () => api.get('/api/support/shipping-info'),
+  getReturnPolicy: () => api.get('/api/support/return-policy'),
+};

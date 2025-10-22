@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { PhoneIcon, EnvelopeIcon, MapPinIcon, ClockIcon } from '@heroicons/react/24/outline';
+import { supportAPI } from '@/lib/types';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -11,12 +12,16 @@ export default function ContactPage() {
     message: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Contact form submitted:', formData);
-    alert('Thank you for your message! We will get back to you within 24 hours.');
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    try {
+      await supportAPI.submitContact(formData);
+      alert('Thank you — your message was submitted. We will get back to you within 24 hours.');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (err) {
+      console.error('Contact submission failed', err);
+      alert('Failed to send message. Please try again later.');
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {

@@ -5,6 +5,7 @@ import { useAuth } from '@/contexts/AuthContext';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeftIcon } from '@heroicons/react/24/outline';
+import { adminAPI, productsAPI } from '@/lib/types';
 
 interface Category {
   id: number;
@@ -54,20 +55,8 @@ export default function NewProduct() {
 
   const fetchCategories = async () => {
     try {
-      const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:8000/api/products/categories', {
-        headers: {
-          'Authorization': `Bearer ${token}`,
-          'Content-Type': 'application/json',
-        },
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to fetch categories');
-      }
-
-      const data = await response.json();
-      setCategories(data.data || []);
+      const res = await productsAPI.getCategories();
+      setCategories(res.data.data || []);
     } catch (error) {
       console.error('Error fetching categories:', error);
     }
@@ -142,28 +131,13 @@ export default function NewProduct() {
     setLoading(true);
     
     try {
-      const token = localStorage.getItem('token');
-      
       // Prepare form data
       const submitData = {
         ...formData,
         specifications: formData.specifications.trim() ? formData.specifications : null
       };
 
-      const response = await fetch('http://localhost:8000/api/admin/products', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${token}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(submitData),
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.detail || 'Failed to create product');
-      }
-
+      await adminAPI.createProduct(submitData);
       alert('Product created successfully!');
       router.push('/admin/products');
     } catch (error) {
