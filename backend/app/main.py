@@ -37,7 +37,7 @@ app.include_router(admin.router, prefix="/api/admin", tags=["Admin"])
 def read_root():
     """Root endpoint - redirect to API documentation"""
     return {
-        "message": "MaxBot Electronics Store API", 
+        "message": "Robostaan_Shop Electronics Store API", 
         "version": "1.0.0",
         "status": "running",
         "docs": "/docs",
@@ -58,7 +58,7 @@ def health_check():
     """Health check endpoint"""
     return {
         "status": "healthy",
-        "service": "MaxBot Electronics API",
+        "service": "Robostaan_Shop Electronics API",
         "version": "1.0.0"
     }
 
@@ -66,7 +66,7 @@ def health_check():
 def api_info():
     """API information endpoint"""
     return {
-        "name": "MaxBot Electronics Store API",
+        "name": "Robostaan_Shop Electronics Store API",
         "version": "1.0.0",
         "description": "Professional electronics components e-commerce API",
         "documentation": "/docs"

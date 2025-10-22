@@ -3,7 +3,7 @@ export default function AboutPage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold text-gray-900 mb-8 text-center">
-          About MaxBot Electronics
+          About Robostaan_Shop
         </h1>
         
         <div className="prose prose-lg mx-auto mb-12">
@@ -14,7 +14,7 @@ export default function AboutPage() {
           <div className="bg-white rounded-lg shadow-md p-8 mb-8">
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">Our Story</h2>
             <p className="text-gray-700 mb-4">
-              MaxBot Electronics was founded by passionate makers and electronics engineers with a mission to provide 
+              Robostaan_Shop Electronics was founded by passionate makers and electronics engineers with a mission to provide 
               high-quality Arduino boards, sensors, and prototyping components to the maker community. We understand 
               the excitement of building projects and the frustration of not finding the right components.
             </p>
@@ -44,7 +44,7 @@ export default function AboutPage() {
           </div>
 
           <div className="bg-gray-50 rounded-lg p-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-6">Why Choose MaxBot Electronics?</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-6">Why Choose Robostaan_Shop Electronics?</h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="flex items-start space-x-3">
                 <div className="w-6 h-6 bg-orange-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">

@@ -5,7 +5,7 @@ export default function TermsPage() {
 
       <div className="bg-white p-6 rounded shadow space-y-4">
         <p className="text-sm text-gray-700">
-          These Terms of Service govern your use of the MaxBot Electronics website and services.
+          These Terms of Service govern your use of the Robostaan_Shop Electronics website and services.
           By using our site you agree to these terms. Please read them carefully.
         </p>
 
@@ -26,7 +26,7 @@ export default function TermsPage() {
 
         <section>
           <h2 className="font-semibold">Limitation of Liability</h2>
-          <p className="text-sm text-gray-700">To the maximum extent permitted by law, MaxBot Electronics is not liable for indirect damages arising from use of the site.</p>
+          <p className="text-sm text-gray-700">To the maximum extent permitted by law, Robostaan_Shop Electronics is not liable for indirect damages arising from use of the site.</p>
         </section>
 
         <section>

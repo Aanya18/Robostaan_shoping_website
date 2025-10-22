@@ -11,7 +11,7 @@ export default function Footer() {
               <div className="w-8 h-8 bg-orange-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">E</span>
               </div>
-              <span className="text-xl font-bold">MaxBot</span>
+              <span className="text-xl font-bold">Robostaan</span>
             </div>
             <p className="text-secondary-300 mb-4 max-w-md">
               Your trusted destination for the latest electronics and gadgets. 
@@ -45,7 +45,7 @@ export default function Footer() {
 
         <div className="border-t border-secondary-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-secondary-400 text-sm">
-            © 2025 MaxBot. All rights reserved.
+            © 2025 Robostaan. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link href="/privacy" className="text-secondary-400 hover:text-white text-sm">

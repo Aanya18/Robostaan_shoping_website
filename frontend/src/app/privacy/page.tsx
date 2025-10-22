@@ -5,7 +5,7 @@ export default function PrivacyPage() {
 
       <div className="bg-white p-6 rounded shadow space-y-4">
         <p className="text-sm text-gray-700">
-          This Privacy Policy explains how MaxBot Electronics ("we", "us", "our") collects,
+          This Privacy Policy explains how Robostaan_Shop Electronics ("we", "us", "our") collects,
           uses, discloses, and protects personal information when you use our website and services.
         </p>
 

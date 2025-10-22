@@ -164,7 +164,7 @@ export default function HomePage() {
           ) : (
             <div className="text-center py-12">
               <div className="w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-4xl">📂</span>
+                <span className="text-4xl"></span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">No Categories Available</h3>
               <p className="text-gray-600 mb-4">
@@ -174,106 +174,6 @@ export default function HomePage() {
           )}
         </div>
       </section>
-
-      {/* Featured Products */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Featured Components
-            </h2>
-            <p className="text-lg text-gray-600">
-              Essential components for your next project
-            </p>
-          </div>
-          
-          {loading ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[...Array(8)].map((_, i) => (
-                <div key={i} className="bg-white rounded-lg shadow-md p-4 animate-pulse">
-                  <div className="h-48 bg-gray-200 rounded mb-4"></div>
-                  <div className="h-4 bg-gray-200 rounded mb-2"></div>
-                  <div className="h-4 bg-gray-200 rounded w-2/3 mb-4"></div>
-                  <div className="h-8 bg-gray-200 rounded"></div>
-                </div>
-              ))}
-            </div>
-          ) : featuredProducts.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {featuredProducts.map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
-            </div>
-          ) : (
-            <div className="text-center py-12">
-              <div className="w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-4xl">📦</span>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">No Components Available</h3>
-              <p className="text-gray-600 mb-4">
-                We're loading our electronics components inventory. Check back soon!
-              </p>
-              <p className="text-sm text-gray-500">
-                Backend API might not be running or electronics data not loaded yet.
-              </p>
-            </div>
-          )}
-          
-          <div className="text-center mt-12">
-            <Link href="/products" className="btn-primary">
-              View All Components
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              What Our Customers Say
-            </h2>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-            {
-                name: "Dr. Aditi Sharma",
-                role: "Electronics Researcher",
-                content: "Top-quality components and reliable delivery — ideal for our R&D and rapid prototyping workflows.",
-                rating: 5
-              },
-              {
-                name: "Rohan Mehta",
-                role: "Maker & Educator", 
-                content: "Wide selection of development boards and sensors, with clear documentation and excellent technical support.",
-                rating: 5
-              },
-              {
-                name: "Prof. Suresh Reddy",
-                role: "University Lab Manager",
-                content: "Consistently reliable supplier for our university labs; institutional pricing and fulfillment are outstanding.",
-                rating: 5
-              }
-            ].map((testimonial, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-md p-6">
-                <div className="flex items-center mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <StarIcon key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                  ))}
-                </div>
-                <p className="text-gray-600 mb-4">"{testimonial.content}"</p>
-                <div>
-                  <p className="font-semibold text-gray-900">{testimonial.name}</p>
-                  <p className="text-sm text-gray-500">{testimonial.role}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Newsletter Section */}
       <section className="py-16 bg-orange-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -281,7 +181,7 @@ export default function HomePage() {
             Stay Updated with New Components
           </h2>
           <p className="text-xl text-orange-100 mb-8">
-            Get notified about new product arrivals, technical guides, and special offers
+            Get notified about new product arrivals, promotions,and special offers
           </p>
           <div className="max-w-md mx-auto flex gap-4">
             <input
@@ -296,82 +196,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Navigation Flow Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Explore MaxBot
-            </h2>
-            <p className="text-lg text-gray-600">
-              Everything you need to know about our electronics components store
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {/* About */}
-            <Link href="/about" className="group bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 p-8 text-center">
-              <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-200 transition-colors">
-                <span className="text-4xl">🏢</span>
-              </div>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4 group-hover:text-blue-600">About Us</h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Learn about our mission to provide quality electronics components to makers, engineers, and innovators worldwide.
-              </p>
-              <div className="text-orange-600 font-medium group-hover:underline text-lg">
-                Learn More →
-              </div>
-            </Link>
 
-            {/* Categories */}
-            <Link href="/categories" className="group bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 p-8 text-center">
-              <div className="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-purple-200 transition-colors">
-                <span className="text-4xl">📂</span>
-              </div>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4 group-hover:text-purple-600">Categories</h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Browse our organized component categories: microcontrollers, sensors, power supplies, development boards, and more.
-              </p>
-              <div className="text-orange-600 font-medium group-hover:underline text-lg">
-                Browse Categories →
-              </div>
-            </Link>
-
-            {/* Contact */}
-            <Link href="/contact" className="group bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 p-8 text-center">
-              <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-orange-200 transition-colors">
-                <span className="text-4xl">📞</span>
-              </div>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4 group-hover:text-orange-600">Contact Us</h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Need help? Our technical support team is ready to assist with your electronics projects, orders, and component selection.
-              </p>
-              <div className="text-orange-600 font-medium group-hover:underline text-lg">
-                Contact Support →
-              </div>
-            </Link>
-          </div>
-
-          {/* Additional Services Links */}
-          <div className="mt-12 text-center">
-            <p className="text-gray-600 mb-6">Need more help? Check out our support resources:</p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/faq" className="bg-white text-gray-700 px-4 py-2 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-200 hover:border-orange-300">
-                📚 FAQ
-              </Link>
-              <Link href="/shipping" className="bg-white text-gray-700 px-4 py-2 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-200 hover:border-orange-300">
-                🚚 Shipping Info
-              </Link>
-              <Link href="/returns" className="bg-white text-gray-700 px-4 py-2 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-200 hover:border-orange-300">
-                📦 Returns & Warranty
-              </Link>
-              <Link href="/deals" className="bg-white text-gray-700 px-4 py-2 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-200 hover:border-orange-300">
-                🔥 Special Deals
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

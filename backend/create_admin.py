@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Single Admin User Setup Script
-Creates ONLY ONE admin user for MaxBot with fixed credentials.
+Creates ONLY ONE admin user for  with fixed credentials.
 """
 
 import sys
@@ -16,14 +16,14 @@ from app.models import models
 # Create database session
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
-# FIXED ADMIN CREDENTIALS - केवल एक ही admin होगा
-ADMIN_USERNAME = "admin@maxbot.com"
-ADMIN_PASSWORD = "maxbot2024"
+# FIXED ADMIN CREDENTIALS - 
+ADMIN_USERNAME = "admin@robostaan.com"
+ADMIN_PASSWORD = "ROBOSTAAN2024"
 ADMIN_DETAILS = {
     "first_name": "Super",
     "last_name": "Admin", 
     "phone": "+91 8439781538",
-    "address": "MAXBOT Admin Office",
+    "address": "Sector 63, Noida",
     "city": "Delhi",
     "postal_code": "110001",
     "country": "India"
@@ -38,7 +38,7 @@ def create_single_admin():
         existing_admins = db.query(models.User).filter(models.User.is_admin == True).all()
         for admin in existing_admins:
             admin.is_admin = False
-            print(f"❌ Removed admin privileges from: {admin.email}")
+            print(f" Removed admin privileges from: {admin.email}")
         
         # Check if our specific admin already exists
         main_admin = db.query(models.User).filter(models.User.email == ADMIN_USERNAME).first()
@@ -59,7 +59,7 @@ def create_single_admin():
             main_admin.hashed_password = get_password_hash(ADMIN_PASSWORD)
             
             db.commit()
-            print("✅ Updated existing user to be the single admin!")
+            print(" Updated existing user to be the single admin!")
         else:
             # Create new admin user
             hashed_password = get_password_hash(ADMIN_PASSWORD)
@@ -81,13 +81,13 @@ def create_single_admin():
             db.add(admin_user)
             db.commit()
             db.refresh(admin_user)
-            print("✅ Created new single admin user!")
+            print(" Created new single admin user!")
         
         # Verify only one admin exists
         total_admins = db.query(models.User).filter(models.User.is_admin == True).count()
         
         print("\n" + "="*50)
-        print("🎯 SINGLE ADMIN SETUP COMPLETE!")
+        print(" SINGLE ADMIN SETUP COMPLETE!")
         print("="*50)
         print(f"👤 Username: {ADMIN_USERNAME}")
         print(f"🔐 Password: {ADMIN_PASSWORD}")
@@ -99,7 +99,7 @@ def create_single_admin():
         
         # Save credentials to file for reference
         with open("admin_credentials.txt", "w", encoding="utf-8") as f:
-            f.write("MAXBOT MaxBot - ADMIN CREDENTIALS\n")
+            f.write("ROBOSTAAN!! - ADMIN CREDENTIALS\n")
             f.write("=====================================\n")
             f.write(f"Username: {ADMIN_USERNAME}\n")
             f.write(f"Password: {ADMIN_PASSWORD}\n")
@@ -108,14 +108,14 @@ def create_single_admin():
             f.write(f"Location: {ADMIN_DETAILS['city']}, {ADMIN_DETAILS['country']}\n")
             f.write("=====================================\n")
         
-        print("📄 Credentials saved to: admin_credentials.txt")
+        print(" Credentials saved to: admin_credentials.txt")
         
     except Exception as e:
         db.rollback()
-        print(f"❌ Error creating single admin: {str(e)}")
+        print(f" Error creating single admin: {str(e)}")
     finally:
         db.close()
 
 if __name__ == "__main__":
-    print("🔧 Setting up SINGLE ADMIN for MAXBOT...")
+    print("🔧 Setting up SINGLE ADMIN for ROBOSTAAN! Please wait....")
     create_single_admin()

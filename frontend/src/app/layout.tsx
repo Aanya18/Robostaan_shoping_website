@@ -13,10 +13,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>MaxBot - Your Electronics Store</title>
-        <meta name="description" content="Your trusted destination for the latest electronics and gadgets" />
+        <title>Robostaan Shop - Ageless Adventure</title>
+        <meta name="description" content="Your trusted destination for innovative technology solutions" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/logo.webp" />
       </head>
       <body>
         <AuthProvider>
