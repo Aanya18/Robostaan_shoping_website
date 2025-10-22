@@ -25,16 +25,32 @@ export default function RegisterPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+    // Ensure fields are not empty and are trimmed strings
+    const requiredFields = ['first_name', 'last_name', 'email', 'password', 'confirmPassword'];
+    for (const field of requiredFields) {
+      if (!formData[field] || (typeof formData[field] === 'string' && formData[field].trim() === '')) {
+        toast.error('All fields marked with * are required');
+        return;
+      }
+    }
     if (formData.password !== formData.confirmPassword) {
       toast.error('Passwords do not match');
       return;
     }
-
+    if (formData.password.length < 6) {
+      toast.error('Password must be at least 6 characters');
+      return;
+    }
     setLoading(true);
-
     try {
-      const { confirmPassword, ...registrationData } = formData;
+      const registrationData = {
+        ...formData,
+        password: formData.password.trim(),
+        first_name: formData.first_name.trim(),
+        last_name: formData.last_name.trim(),
+        email: formData.email.trim(),
+      };
+      delete registrationData.confirmPassword;
       await register(registrationData);
       toast.success('Registration successful!');
       router.push('/');
@@ -244,13 +260,13 @@ export default function RegisterPage() {
             />
             <label htmlFor="agree-terms" className="ml-2 block text-sm text-gray-900">
               I agree to the{' '}
-              <button className="text-orange-600 hover:text-orange-500">
+              <Link href="/terms" className="text-orange-600 hover:text-orange-500" target="_blank">
                 Terms and Conditions
-              </button>{' '}
+              </Link>{' '}
               and{' '}
-              <button className="text-orange-600 hover:text-orange-500">
+              <Link href="/privacy" className="text-orange-600 hover:text-orange-500" target="_blank">
                 Privacy Policy
-              </button>
+              </Link>
             </label>
           </div>
 
