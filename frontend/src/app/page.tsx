@@ -55,11 +55,11 @@ export default function HomePage() {
               From hobbyist projects to industrial applications.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/categories" className="bg-white text-orange-600 px-8 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-colors">
-                Browse Categories
+              <Link href="/products" className="bg-white text-orange-600 px-8 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-colors">
+                Browse Products
               </Link>
-              <Link href="/products" className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors">
-                Shop All Components
+              <Link href="/services" className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors">
+                Our Services
               </Link>
             </div>
           </div>
@@ -129,49 +129,50 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Categories Section */}
+      {/* Featured Products Section */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Shop by Category
+              Featured Products
             </h2>
             <p className="text-lg text-gray-600">
-              Find exactly what you're looking for
+              Discover our most popular electronic components
             </p>
           </div>
           
-          {categories.length > 0 ? (
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {categories.map((category) => (
-                <Link
-                  key={category.id}
-                  href={`/products?category=${category.id}`}
-                  className="group bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-6 text-center"
-                >
-                  <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-200 transition-colors">
-                    <span className="text-2xl">📱</span>
-                  </div>
-                  <h3 className="font-semibold text-gray-900 mb-2">{category.name}</h3>
-                  <p className="text-sm text-gray-600 mb-3">{category.description}</p>
-                  <div className="flex items-center justify-center text-orange-600 group-hover:text-orange-700">
-                    <span className="text-sm font-medium">Shop now</span>
-                    <ChevronRightIcon className="w-4 h-4 ml-1" />
-                  </div>
-                </Link>
+          {loading ? (
+            <div className="text-center py-12">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-600 mx-auto"></div>
+              <p className="text-gray-600 mt-4">Loading products...</p>
+            </div>
+          ) : featuredProducts.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {featuredProducts.map((product) => (
+                <ProductCard key={product.id} product={product} />
               ))}
             </div>
           ) : (
             <div className="text-center py-12">
               <div className="w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-4xl"></span>
+                <span className="text-4xl">📦</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">No Categories Available</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">No Products Available</h3>
               <p className="text-gray-600 mb-4">
-                Categories will appear here once the backend is populated with data.
+                Products will appear here once the backend is populated with data.
               </p>
             </div>
           )}
+          
+          <div className="text-center mt-8">
+            <Link 
+              href="/products" 
+              className="inline-flex items-center bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors"
+            >
+              View All Products
+              <ChevronRightIcon className="w-5 h-5 ml-2" />
+            </Link>
+          </div>
         </div>
       </section>
       {/* Newsletter Section */}

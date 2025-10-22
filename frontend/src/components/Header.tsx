@@ -36,14 +36,14 @@ function Header(): JSX.Element {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
-            <Link href="/categories" className="text-gray-700 hover:text-orange-600 text-sm font-medium">
-              Categories
-            </Link>
-            <Link href="/products" className="text-gray-700 hover:text-orange-600 text-sm font-medium">
-              All Products
-            </Link>
             <Link href="/about" className="text-gray-700 hover:text-orange-600 text-sm font-medium">
               About
+            </Link>
+            <Link href="/services" className="text-gray-700 hover:text-orange-600 text-sm font-medium">
+              Services
+            </Link>
+            <Link href="/products" className="text-gray-700 hover:text-orange-600 text-sm font-medium">
+              Products
             </Link>
             <Link href="/contact" className="text-gray-700 hover:text-orange-600 text-sm font-medium">
               Contact
@@ -119,14 +119,14 @@ function Header(): JSX.Element {
         {isMenuOpen && (
           <div className="md:hidden border-t border-gray-200 py-3">
             <div className="flex flex-col space-y-3">
-              <Link href="/categories" className="text-sm text-gray-700 hover:text-orange-600 font-medium px-2">
-                Categories
-              </Link>
-              <Link href="/products" className="text-sm text-gray-700 hover:text-orange-600 font-medium px-2">
-                All Products
-              </Link>
               <Link href="/about" className="text-sm text-gray-700 hover:text-orange-600 font-medium px-2">
                 About
+              </Link>
+              <Link href="/services" className="text-sm text-gray-700 hover:text-orange-600 font-medium px-2">
+                Services
+              </Link>
+              <Link href="/products" className="text-sm text-gray-700 hover:text-orange-600 font-medium px-2">
+                Products
               </Link>
               <Link href="/contact" className="text-sm text-gray-700 hover:text-orange-600 font-medium px-2">
                 Contact
