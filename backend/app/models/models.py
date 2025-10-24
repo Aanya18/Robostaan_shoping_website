@@ -18,6 +18,14 @@ class User(Base):
     country = Column(String)
     is_active = Column(Boolean, default=True)
     is_admin = Column(Boolean, default=False)
+    # Email verification fields
+    email_verified = Column(Boolean, default=False)
+    email_verification_token = Column(String, nullable=True)
+    verification_token_expires = Column(DateTime, nullable=True)
+    # Security fields
+    last_login = Column(DateTime, nullable=True)
+    login_attempts = Column(Integer, default=0)
+    account_locked_until = Column(DateTime, nullable=True)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     
     # Relationships
@@ -86,6 +94,11 @@ class Order(Base):
     payment_method = Column(String)
     payment_status = Column(String, default="pending")
     notes = Column(Text)
+    # Order tracking fields
+    confirmation_sent = Column(Boolean, default=False)
+    tracking_number = Column(String, nullable=True)
+    estimated_delivery = Column(DateTime, nullable=True)
+    delivery_notes = Column(Text, nullable=True)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
     
@@ -106,6 +119,19 @@ class OrderItem(Base):
     # Relationships
     order = relationship("Order", back_populates="order_items")
     product = relationship("Product", back_populates="order_items")
+
+class OrderStatus(Base):
+    __tablename__ = "order_statuses"
+    
+    id = Column(Integer, primary_key=True, index=True)
+    order_id = Column(Integer, ForeignKey("orders.id"), nullable=False)
+    status = Column(String, nullable=False)
+    timestamp = Column(DateTime(timezone=True), server_default=func.now())
+    notes = Column(Text, nullable=True)
+    updated_by = Column(String, nullable=True)  # admin, system, or user
+    
+    # Relationships
+    order = relationship("Order")
 
 
 class SupportTicket(Base):

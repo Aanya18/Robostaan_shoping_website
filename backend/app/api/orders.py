@@ -6,6 +6,7 @@ from datetime import datetime
 from app.core.database import get_db
 from app.models import models, schemas
 from app.api.auth import get_current_user
+from app.services.email import email_service
 
 router = APIRouter()
 
@@ -81,8 +82,29 @@ def create_order(
         models.CartItem.user_id == current_user.id
     ).delete()
     
+    # Create initial order status record
+    initial_status = models.OrderStatus(
+        order_id=db_order.id,
+        status="pending",
+        updated_by="system"
+    )
+    db.add(initial_status)
+    
     db.commit()
     db.refresh(db_order)
+    
+    # Send order confirmation email
+    try:
+        email_service.send_order_confirmation(
+            user_email=current_user.email,
+            user_name=f"{current_user.first_name} {current_user.last_name}",
+            order=db_order
+        )
+        db_order.confirmation_sent = True
+        db.commit()
+    except Exception as e:
+        print(f"Failed to send order confirmation email: {e}")
+        # Don't fail order creation if email sending fails
     
     return db_order
 
