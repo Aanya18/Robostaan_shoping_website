@@ -12,6 +12,8 @@ export interface User {
   country?: string;
   is_active: boolean;
   is_admin: boolean;
+  email_verified: boolean;
+  last_login?: string;
   created_at: string;
 }
 

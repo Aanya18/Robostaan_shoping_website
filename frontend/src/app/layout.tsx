@@ -16,7 +16,7 @@ export default function RootLayout({
         <title>Robostaan Shop - Ageless Adventure</title>
         <meta name="description" content="Your trusted destination for innovative technology solutions" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/logo.webp" />
+        <link rel="icon" href="/logo.svg" />
       </head>
       <body>
         <AuthProvider>

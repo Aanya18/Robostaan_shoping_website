@@ -24,7 +24,7 @@ function Header(): JSX.Element {
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
               <img 
-                src="/logo.webp" 
+                src="/logo.svg" 
                 alt="Robostaan Logo" 
                 className="w-8 h-8"
               />
