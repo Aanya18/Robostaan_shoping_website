@@ -1,4 +1,4 @@
-# 🚀 MAXBOT SINGLE ADMIN SETUP GUIDE
+# 🚀 Robostaan SINGLE ADMIN SETUP GUIDE
 
 ## 🎯 SINGLE ADMIN SYSTEM - सिर्फ एक Admin
 
@@ -7,8 +7,8 @@
 ## 🔐 FIXED ADMIN CREDENTIALS (Saved करके रखें)
 
 ```
-Username: admin@maxbot.com
-Password: maxbot2024
+Username: admin@Robostaan.com
+Password: Robostaan2024
 Name: Super Admin
 Phone: +91 8439781538
 Location: Delhi, India
@@ -58,8 +58,8 @@ npm run dev
 
 1. **Login करें**: 
    - Go to: http://localhost:3000/login
-   - Username: `admin@maxbot.com`
-   - Password: `maxbot2024`
+   - Username: `admin@Robostaan.com`
+   - Password: `Robostaan2024`
 
 2. **Admin Panel Access करें**:
    - Header में "Admin Panel" click करें
@@ -119,9 +119,9 @@ npm run dev
 
 ## 🚨 Important Notes
 
-- **Username/Password Fixed**: `admin@maxbot.com` / `maxbot2024`
+- **Username/Password Fixed**: `admin@Robostaan.com` / `Robostaan2024`
 - **Only One Admin**: System में हमेशा एक ही admin
 - **Auto Save**: Credentials automatically save हो जाते हैं
 - **Indian Details**: Admin profile में Indian address/phone डाला गया है
 
-Your MAXBOT is now ready with a **single, secure admin system**! 🎉
+Your Robostaan is now ready with a **single, secure admin system**! 🎉

@@ -1,4 +1,4 @@
-# 🔒 **Maxbot Security & Trust Implementation - COMPLETED**
+# 🔒 **Robostaan Security & Trust Implementation - COMPLETED**
 
 ## ✅ **What Has Been Implemented**
 
@@ -170,7 +170,7 @@ SMTP_SERVER=smtp.gmail.com
 SMTP_PORT=587
 EMAIL_USERNAME=your-email@gmail.com
 EMAIL_PASSWORD=your-app-password
-EMAIL_FROM_NAME=Maxbot Electronics
+EMAIL_FROM_NAME=Robostaan Electronics
 FRONTEND_URL=https://yourdomain.com
 
 # Security Configuration
@@ -209,7 +209,7 @@ JWT_ACCESS_TOKEN_EXPIRE_MINUTES=30
 
 ## 🎉 **Result: Secure, Trustworthy Platform**
 
-Your Maxbot platform now provides:
+Your Robostaan platform now provides:
 
 1. **🔒 Complete Security** - Email verification, secure payments, SSL
 2. **📧 Professional Communication** - Branded emails, order confirmations

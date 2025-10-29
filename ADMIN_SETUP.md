@@ -1,10 +1,10 @@
-# Maxbot Admin Setup Guide
+# Robostaan Admin Setup Guide
 
-## 🚀 Complete Admin System Implementation
+##  Complete Admin System Implementation
 
-I've successfully implemented a comprehensive admin and user interface system for your Maxbot application. Here's what has been added:
+I've successfully implemented a comprehensive admin and user interface system for your Robostaan application. Here's what has been added:
 
-## ✅ Backend Improvements
+## Backend Improvements
 
 ### 1. Admin Role System
 - Added `is_admin` field to User model
@@ -79,7 +79,7 @@ python create_admin.py
 ```
 
 This creates an admin user with:
-- **Email**: admin@maxbot.com
+- **Email**: admin@Robostaan.com
 - **Password**: admin123
 - **Admin privileges**: ✅
 
@@ -153,4 +153,4 @@ npm run dev
 - **Admin Protection**: Cannot modify own admin status
 - **Production Ready**: All features fully functional
 
-Your Maxbot now has a complete admin system! The admin can manage all aspects of the e-commerce store while regular users have the standard shopping experience.
+Your Robostaan now has a complete admin system! The admin can manage all aspects of the e-commerce store while regular users have the standard shopping experience.

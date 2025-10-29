@@ -13,7 +13,7 @@ This guide will help you set up and run the Electronics Store application locall
 ### 1. Clone the Repository
 ```bash
 git clone <repository-url>
-cd MAXBOT
+cd Robostaan
 ```
 
 ### 2. Backend Setup

@@ -52,14 +52,14 @@ class EmailService:
         """Send email verification email"""
         verification_link = f"{os.getenv('FRONTEND_URL', 'http://localhost:3000')}/verify-email?token={verification_token}"
         
-        subject = "Verify Your Email - Maxbot Electronics"
+        subject = "Verify Your Email - Robostaan Shop"
         
         html_content = f"""
         <!DOCTYPE html>
         <html>
         <head>
             <meta charset="utf-8">
-            <title>Verify Your Email - Maxbot Electronics</title>
+            <title>Verify Your Email - Robostaan Shop</title>
             <style>
                 body {{ font-family: Arial, sans-serif; line-height: 1.6; color: #333; }}
                 .container {{ max-width: 600px; margin: 0 auto; padding: 20px; }}
@@ -72,12 +72,12 @@ class EmailService:
         <body>
             <div class="container">
                 <div class="header">
-                    <h1>🔧 Maxbot Electronics</h1>
+                    <h1>🔧 Robostaan Shop</h1>
                     <p>Welcome to our platform!</p>
                 </div>
                 <div class="content">
                     <h2>Hello {user_name}!</h2>
-                    <p>Thank you for registering with Maxbot Electronics. To complete your registration and start shopping for electronics and manufacturing services, please verify your email address.</p>
+                    <p>Thank you for registering with Robostaan Shop. To complete your registration and start shopping for electronics and manufacturing services, please verify your email address.</p>
                     
                     <p>Click the button below to verify your email:</p>
                     <a href="{verification_link}" class="button">Verify Email Address</a>
@@ -90,7 +90,7 @@ class EmailService:
                     <p>If you didn't create an account with us, please ignore this email.</p>
                 </div>
                 <div class="footer">
-                    <p>© 2024 Maxbot Electronics. All rights reserved.</p>
+                    <p>© 2024 Robostaan Shop. All rights reserved.</p>
                     <p>This is an automated message, please do not reply to this email.</p>
                 </div>
             </div>
@@ -99,11 +99,11 @@ class EmailService:
         """
         
         text_content = f"""
-        Welcome to Maxbot Electronics!
+        Welcome to Robostaan Shop!
         
         Hello {user_name},
         
-        Thank you for registering with Maxbot Electronics. To complete your registration, please verify your email address by clicking the link below:
+        Thank you for registering with Robostaan Shop. To complete your registration, please verify your email address by clicking the link below:
         
         {verification_link}
         
@@ -112,7 +112,7 @@ class EmailService:
         If you didn't create an account with us, please ignore this email.
         
         Best regards,
-        Maxbot Electronics Team
+        Robostaan Shop Team
         """
         
         return self._send_email(user_email, subject, html_content, text_content)
@@ -140,7 +140,7 @@ class EmailService:
         <html>
         <head>
             <meta charset="utf-8">
-            <title>Order Confirmation - Maxbot Electronics</title>
+            <title>Order Confirmation - Robostaan Shop</title>
             <style>
                 body {{ font-family: Arial, sans-serif; line-height: 1.6; color: #333; }}
                 .container {{ max-width: 600px; margin: 0 auto; padding: 20px; }}
@@ -157,7 +157,7 @@ class EmailService:
         <body>
             <div class="container">
                 <div class="header">
-                    <h1>🔧 Maxbot Electronics</h1>
+                    <h1>🔧 Robostaan Shop</h1>
                     <p>Order Confirmation</p>
                 </div>
                 <div class="content">
@@ -200,7 +200,7 @@ class EmailService:
                     <p>If you have any questions, please contact our support team.</p>
                 </div>
                 <div class="footer">
-                    <p>© 2024 Maxbot Electronics. All rights reserved.</p>
+                    <p>© 2024 Robostaan Shop. All rights reserved.</p>
                     <p>This is an automated message, please do not reply to this email.</p>
                 </div>
             </div>
@@ -209,7 +209,7 @@ class EmailService:
         """
         
         text_content = f"""
-        Order Confirmation - Maxbot Electronics
+        Order Confirmation - Robostaan Shop
         
         Hello {user_name},
         
@@ -232,7 +232,7 @@ class EmailService:
         We'll send you another email when your order ships with tracking information.
         
         Best regards,
-        Maxbot Electronics Team
+        Robostaan Shop Team
         """
         
         return self._send_email(user_email, subject, html_content, text_content)
@@ -255,7 +255,7 @@ class EmailService:
         <html>
         <head>
             <meta charset="utf-8">
-            <title>Order Update - Maxbot Electronics</title>
+            <title>Order Update - Robostaan Shop</title>
             <style>
                 body {{ font-family: Arial, sans-serif; line-height: 1.6; color: #333; }}
                 .container {{ max-width: 600px; margin: 0 auto; padding: 20px; }}
@@ -269,7 +269,7 @@ class EmailService:
         <body>
             <div class="container">
                 <div class="header">
-                    <h1>🔧 Maxbot Electronics</h1>
+                    <h1>🔧 Robostaan Shop</h1>
                     <p>Order Status Update</p>
                 </div>
                 <div class="content">
@@ -290,7 +290,7 @@ class EmailService:
                     <p>If you have any questions, please contact our support team.</p>
                 </div>
                 <div class="footer">
-                    <p>© 2024 Maxbot Electronics. All rights reserved.</p>
+                    <p>© 2024 Robostaan Shop. All rights reserved.</p>
                     <p>This is an automated message, please do not reply to this email.</p>
                 </div>
             </div>
@@ -299,7 +299,7 @@ class EmailService:
         """
         
         text_content = f"""
-        Order Update - Maxbot Electronics
+        Order Update - Robostaan Shop
         
         Hello {user_name},
         
@@ -316,7 +316,7 @@ class EmailService:
         You can track your order status anytime by logging into your account.
         
         Best regards,
-        Maxbot Electronics Team
+        Robostaan Shop Team
         """
         
         return self._send_email(user_email, subject, html_content, text_content)

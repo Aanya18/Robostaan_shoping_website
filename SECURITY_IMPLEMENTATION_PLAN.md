@@ -1,4 +1,4 @@
-# 🔒 **Maxbot Security & Trust Implementation Plan**
+# 🔒 **Robostaan Security & Trust Implementation Plan**
 
 ## 📋 **Current Security Analysis**
 
@@ -216,11 +216,11 @@ export default function OrderTracking({ orderId }: { orderId: string }) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Verify Your Email - Maxbot Electronics</title>
+    <title>Verify Your Email - Robostaan Electronics</title>
 </head>
 <body>
     <div style="max-width: 600px; margin: 0 auto; font-family: Arial, sans-serif;">
-        <h2>Welcome to Maxbot Electronics!</h2>
+        <h2>Welcome to Robostaan Electronics!</h2>
         <p>Please verify your email address to complete your registration:</p>
         <a href="{{verification_link}}" style="background: #f97316; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px;">
             Verify Email Address
@@ -236,7 +236,7 @@ export default function OrderTracking({ orderId }: { orderId: string }) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Order Confirmation - Maxbot Electronics</title>
+    <title>Order Confirmation - Robostaan Electronics</title>
 </head>
 <body>
     <div style="max-width: 600px; margin: 0 auto; font-family: Arial, sans-serif;">
@@ -270,7 +270,7 @@ SMTP_SERVER=smtp.gmail.com
 SMTP_PORT=587
 EMAIL_USERNAME=your-email@gmail.com
 EMAIL_PASSWORD=your-app-password
-EMAIL_FROM=noreply@maxbot.com
+EMAIL_FROM=noreply@Robostaan.com
 
 # Security Configuration
 JWT_SECRET_KEY=your-super-secret-key
@@ -284,7 +284,7 @@ SSL_KEY_PATH=/path/to/key.pem
 FORCE_HTTPS=true
 
 # 2FA Configuration
-TOTP_ISSUER=Maxbot Electronics
+TOTP_ISSUER=Robostaan Electronics
 SMS_API_KEY=your-sms-api-key
 ```
 

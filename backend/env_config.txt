@@ -1,19 +1,19 @@
-# MAXBOT - ENVIRONMENT CONFIGURATION
+# ROBOSTAAN - ENVIRONMENT CONFIGURATION
 # ==============================================
 
 # Database Configuration
 DATABASE_URL=sqlite:///./electronics_store.db
-SECRET_KEY=maxbot_secret_key_2024
+SECRET_KEY=robostaan_secret_key_2024
 
 # SINGLE ADMIN CREDENTIALS
 # ========================
 # केवल एक ही admin user होगा system में
-ADMIN_EMAIL=admin@maxbot.com
-ADMIN_PASSWORD=maxbot2024
+ADMIN_EMAIL=admin@robostaan.com
+ADMIN_PASSWORD=robostaan2024
 ADMIN_FIRST_NAME=Super
 ADMIN_LAST_NAME=Admin
 ADMIN_PHONE=+91 8439781538
-ADMIN_ADDRESS=MAXBOT Admin Office
+ADMIN_ADDRESS=ROBOSTAAN Admin Office
 ADMIN_CITY=Delhi
 ADMIN_POSTAL_CODE=110001
 ADMIN_COUNTRY=India
