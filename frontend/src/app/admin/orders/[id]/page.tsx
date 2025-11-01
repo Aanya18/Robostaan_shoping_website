@@ -255,7 +255,7 @@ export default function OrderDetails({ params }: { params: { id: string } }) {
               <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
                 <div className="flex justify-between items-center">
                   <span className="text-lg font-medium text-gray-900">Total Amount</span>
-                  <span className="text-lg font-bold text-gray-900">${order.total_amount.toFixed(2)}</span>
+                  <span className="text-lg font-bold text-gray-900">₹{order.total_amount.toFixed(2)}</span>
                 </div>
               </div>
             </div>
@@ -304,7 +304,7 @@ export default function OrderDetails({ params }: { params: { id: string } }) {
                 </div>
                 <div>
                   <p className="text-sm font-medium text-gray-500">Amount</p>
-                  <p className="text-sm text-gray-900">${order.total_amount.toFixed(2)}</p>
+                  <p className="text-sm text-gray-900">₹{order.total_amount.toFixed(2)}</p>
                 </div>
               </div>
             </div>

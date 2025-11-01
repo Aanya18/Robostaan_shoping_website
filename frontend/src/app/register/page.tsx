@@ -13,11 +13,6 @@ export default function RegisterPage() {
     confirmPassword: '',
     first_name: '',
     last_name: '',
-    phone: '',
-    address: '',
-    city: '',
-    postal_code: '',
-    country: '',
   });
   const [loading, setLoading] = useState(false);
   const { register } = useAuth();
@@ -174,80 +169,7 @@ export default function RegisterPage() {
               />
             </div>
             
-            <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
-                Phone Number
-              </label>
-              <input
-                id="phone"
-                name="phone"
-                type="tel"
-                value={formData.phone}
-                onChange={handleChange}
-                className="input mt-1"
-                placeholder="Enter your phone number"
-              />
-            </div>
-            
-            <div>
-              <label htmlFor="country" className="block text-sm font-medium text-gray-700">
-                Country
-              </label>
-              <input
-                id="country"
-                name="country"
-                type="text"
-                value={formData.country}
-                onChange={handleChange}
-                className="input mt-1"
-                placeholder="Enter your country"
-              />
-            </div>
-            
-            <div className="md:col-span-2">
-              <label htmlFor="address" className="block text-sm font-medium text-gray-700">
-                Address
-              </label>
-              <input
-                id="address"
-                name="address"
-                type="text"
-                value={formData.address}
-                onChange={handleChange}
-                className="input mt-1"
-                placeholder="Enter your address"
-              />
-            </div>
-            
-            <div>
-              <label htmlFor="city" className="block text-sm font-medium text-gray-700">
-                City
-              </label>
-              <input
-                id="city"
-                name="city"
-                type="text"
-                value={formData.city}
-                onChange={handleChange}
-                className="input mt-1"
-                placeholder="Enter your city"
-              />
-            </div>
-            
-            <div>
-              <label htmlFor="postal_code" className="block text-sm font-medium text-gray-700">
-                Postal Code
-              </label>
-              <input
-                id="postal_code"
-                name="postal_code"
-                type="text"
-                value={formData.postal_code}
-                onChange={handleChange}
-                className="input mt-1"
-                placeholder="Enter your postal code"
-              />
-            </div>
+            {/* Additional fields removed - will be collected during checkout */}
           </div>
 
           <div className="flex items-center">

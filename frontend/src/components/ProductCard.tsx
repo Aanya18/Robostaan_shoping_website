@@ -19,7 +19,8 @@ export default function ProductCard({ product }: ProductCardProps) {
 
   const handleAddToCart = async () => {
     if (!user) {
-      toast.error('Please login to add items to cart');
+      // Redirect to login page instead of showing toast
+      window.location.href = '/login';
       return;
     }
 

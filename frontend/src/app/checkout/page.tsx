@@ -33,11 +33,7 @@ export default function CheckoutPage() {
       return;
     }
 
-    // Check if email is verified
-    if (!user.email_verified) {
-      toast.error('Please verify your email address before placing an order');
-      return;
-    }
+    // Email verification check removed
 
     if (items.length === 0) {
       toast.error('Your cart is empty');

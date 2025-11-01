@@ -27,7 +27,6 @@ export default function Footer() {
               <li><Link href="/categories" className="text-secondary-300 hover:text-white">All Categories</Link></li>
               <li><Link href="/products" className="text-secondary-300 hover:text-white">All Products</Link></li>
               <li><Link href="/deals" className="text-secondary-300 hover:text-white">Special Deals</Link></li>
-              <li><Link href="/new-arrivals" className="text-secondary-300 hover:text-white">New Arrivals</Link></li>
             </ul>
           </div>
 

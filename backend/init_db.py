@@ -29,9 +29,6 @@ def init_database():
         price REAL NOT NULL,
         stock_quantity INTEGER NOT NULL,
         category_id INTEGER,
-        brand TEXT,
-        model TEXT,
-        specifications TEXT,
         is_active BOOLEAN DEFAULT 1,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -62,42 +59,24 @@ def init_database():
         {
             "name": "Arduino Uno R3",
             "description": "Popular microcontroller board for beginners and advanced projects",
-            "price": 23.99,
+            "price": 1999.00,
             "stock_quantity": 100,
-            "category_id": 2,
-            "brand": "Arduino",
-            "model": "A000066",
-            "specifications": json.dumps({
-                "microcontroller": "ATmega328P",
-                "operating_voltage": "5V",
-                "digital_pins": "14 (6 PWM)",
-                "analog_pins": "6"
-            })
+            "category_id": 2
         },
         {
             "name": "Raspberry Pi 4 Model B",
             "description": "Powerful single-board computer for robotics and IoT projects",
-            "price": 45.99,
+            "price": 3799.00,
             "stock_quantity": 50,
-            "category_id": 2,
-            "brand": "Raspberry Pi Foundation",
-            "model": "RP4-4GB",
-            "specifications": json.dumps({
-                "processor": "Broadcom BCM2711 (1.5GHz)",
-                "memory": "4GB LPDDR4",
-                "connectivity": "2.4/5GHz WiFi, Bluetooth 5.0, Gigabit Ethernet",
-                "ports": "2x USB 3.0, 2x USB 2.0, 2x micro-HDMI"
-            })
+            "category_id": 2
         },
         {
             "name": "ESP32 Development Board",
             "description": "WiFi & Bluetooth enabled microcontroller for IoT applications",
-            "price": 12.99,
+            "price": 999.00,
             "stock_quantity": 150,
-            "category_id": 2,
-            "brand": "Espressif Systems",
-            "model": "ESP32-WROOM-32",
-            "specifications": json.dumps({
+            "category_id": 2
+        },
                 "processor": "Dual-core Xtensa LX6",
                 "connectivity": "WiFi 802.11 b/g/n, Bluetooth 4.2",
                 "gpio": "36 pins",

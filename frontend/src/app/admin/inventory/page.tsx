@@ -257,7 +257,7 @@ export default function InventoryManagement() {
                 </div>
                 <div className="ml-4">
                   <p className="text-sm font-medium text-gray-500">Total Value</p>
-                  <p className="text-2xl font-bold text-gray-900">${stats.total_value.toFixed(2)}</p>
+                  <p className="text-2xl font-bold text-gray-900">₹{stats.total_value.toFixed(2)}</p>
                   <p className="text-xs text-gray-500">Inventory value</p>
                 </div>
               </div>
