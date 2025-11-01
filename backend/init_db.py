@@ -32,6 +32,7 @@ def init_database():
         brand TEXT,
         model TEXT,
         specifications TEXT,
+        is_active BOOLEAN DEFAULT 1,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY (category_id) REFERENCES categories (id)
@@ -199,8 +200,8 @@ def init_database():
     cursor.execute("DELETE FROM products")
     for product in products:
         cursor.execute(
-            "INSERT INTO products (name, description, price, stock_quantity, category_id, brand, model, specifications) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
-            (product["name"], product["description"], product["price"], product["stock_quantity"], product["category_id"], product["brand"], product["model"], product["specifications"])
+            "INSERT INTO products (name, description, price, stock_quantity, category_id, brand, model, specifications, is_active) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+            (product["name"], product["description"], product["price"], product["stock_quantity"], product["category_id"], product["brand"], product["model"], product["specifications"], 1)
         )
     
     # Create users table if it doesn't exist
