@@ -32,13 +32,18 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">Contact Our Engineering Team</h1>
-        <p className="text-xl text-gray-600">
-          Get expert technical support and component selection assistance
-        </p>
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      {/* Hero Section */}
+      <div className="bg-gradient-to-r from-secondary-800 to-blue-700 text-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact Our Engineering Team</h1>
+          <p className="text-xl text-blue-100">
+            Get expert technical support and component selection assistance
+          </p>
+        </div>
       </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
       <div className="grid lg:grid-cols-2 gap-12">
         {/* Contact Information */}
@@ -51,8 +56,8 @@ export default function ContactPage() {
 
           <div className="space-y-6">
             <div className="flex items-start space-x-4">
-              <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <PhoneIcon className="w-6 h-6 text-orange-600" />
+              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                <PhoneIcon className="w-6 h-6 text-white" />
               </div>
               <div>
                 <h3 className="text-lg font-medium text-gray-900">Technical Support</h3>
@@ -62,8 +67,8 @@ export default function ContactPage() {
             </div>
 
             <div className="flex items-start space-x-4">
-              <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <EnvelopeIcon className="w-6 h-6 text-orange-600" />
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                <EnvelopeIcon className="w-6 h-6 text-white" />
               </div>
               <div>
                 <h3 className="text-lg font-medium text-gray-900">Email Support</h3>
@@ -73,8 +78,8 @@ export default function ContactPage() {
             </div>
 
             <div className="flex items-start space-x-4">
-              <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <MapPinIcon className="w-6 h-6 text-orange-600" />
+              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                <MapPinIcon className="w-6 h-6 text-white" />
               </div>
               <div>
                 <h3 className="text-lg font-medium text-gray-900">Office</h3>
@@ -85,8 +90,8 @@ export default function ContactPage() {
             </div>
 
             <div className="flex items-start space-x-4">
-              <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <ClockIcon className="w-6 h-6 text-orange-600" />
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                <ClockIcon className="w-6 h-6 text-white" />
               </div>
               <div>
                 <h3 className="text-lg font-medium text-gray-900">Support Hours</h3>
@@ -142,8 +147,8 @@ export default function ContactPage() {
 
         {/* Contact Form */}
         <div>
-          <div className="bg-white rounded-lg shadow-md p-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-6">Send us a Message</h2>
+          <div className="bg-white rounded-2xl shadow-xl p-8 border-t-4 border-orange-600">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h2>
             
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
@@ -221,7 +226,7 @@ export default function ContactPage() {
 
               <button
                 type="submit"
-                className="w-full btn-primary"
+                className="w-full btn-primary text-lg py-3"
               >
                 Send Message
               </button>
@@ -242,6 +247,7 @@ export default function ContactPage() {
             </a>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

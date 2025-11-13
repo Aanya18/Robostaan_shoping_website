@@ -13,10 +13,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>Robostaan Shop - Ageless Adventure</title>
+        <title>Robostaan - An Ageless Adventure</title>
         <meta name="description" content="Your trusted destination for innovative technology solutions" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.png" />
+        <meta name="theme-color" content="#C45215" />
       </head>
       <body>
         <AuthProvider>

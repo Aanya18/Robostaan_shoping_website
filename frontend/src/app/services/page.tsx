@@ -115,23 +115,35 @@ export default function ServicesPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-orange-500 to-orange-600 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-gradient-to-br from-secondary-900 via-secondary-800 to-blue-700 text-white py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-black opacity-10"></div>
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-orange-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <div className="flex justify-center mb-6">
+              <img 
+                src="/logo.png" 
+                alt="Robostaan Logo" 
+                className="h-20 w-auto drop-shadow-2xl"
+              />
+            </div>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
               Complete Electronics & Manufacturing Services
             </h1>
-            <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto text-orange-100">
+            <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto text-blue-100">
               From 3D design to full-scale manufacturing, we provide end-to-end solutions 
               for electronics products, prototypes, and custom manufacturing needs.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm">
-              <span className="bg-white/20 px-4 py-2 rounded-full">3D Design & Modeling</span>
-              <span className="bg-white/20 px-4 py-2 rounded-full">3D Printing</span>
-              <span className="bg-white/20 px-4 py-2 rounded-full">Custom Manufacturing</span>
-              <span className="bg-white/20 px-4 py-2 rounded-full">Electronics Assembly</span>
+              <span className="bg-orange-600 px-6 py-3 rounded-full font-semibold shadow-lg">3D Design & Modeling</span>
+              <span className="bg-blue-600 px-6 py-3 rounded-full font-semibold shadow-lg">3D Printing</span>
+              <span className="bg-orange-600 px-6 py-3 rounded-full font-semibold shadow-lg">Custom Manufacturing</span>
+              <span className="bg-blue-600 px-6 py-3 rounded-full font-semibold shadow-lg">Electronics Assembly</span>
             </div>
           </div>
         </div>
@@ -151,11 +163,11 @@ export default function ServicesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-6">
-                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-4">
-                  <service.icon className="w-8 h-8 text-orange-600" />
+              <div key={index} className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all p-6 border-t-4 border-orange-600 hover:scale-105 transform duration-200">
+                <div className={`w-16 h-16 ${index % 2 === 0 ? 'bg-gradient-to-br from-orange-500 to-orange-600' : 'bg-gradient-to-br from-blue-500 to-blue-600'} rounded-2xl flex items-center justify-center mb-4 shadow-lg`}>
+                  <service.icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                <h3 className="text-xl font-bold text-secondary-800 mb-3">
                   {service.title}
                 </h3>
                 <p className="text-gray-600 mb-4">
@@ -164,7 +176,7 @@ export default function ServicesPage() {
                 <ul className="space-y-2">
                   {service.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center text-sm text-gray-600">
-                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
+                      <div className={`w-2 h-2 ${index % 2 === 0 ? 'bg-orange-500' : 'bg-blue-500'} rounded-full mr-3`}></div>
                       {feature}
                     </li>
                   ))}
@@ -188,9 +200,9 @@ export default function ServicesPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-gray-50 rounded-lg p-6">
-              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-4">
-                <CubeIcon className="w-8 h-8 text-orange-600" />
+            <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-6 border-l-4 border-orange-600 shadow-lg hover:shadow-xl transition-shadow">
+              <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
+                <CubeIcon className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">3D Design & CAD</h3>
               <ul className="space-y-2 text-gray-600">
@@ -202,9 +214,9 @@ export default function ServicesPage() {
               </ul>
             </div>
 
-            <div className="bg-gray-50 rounded-lg p-6">
-              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-4">
-                <PrinterIcon className="w-8 h-8 text-orange-600" />
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 border-l-4 border-blue-600 shadow-lg hover:shadow-xl transition-shadow">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
+                <PrinterIcon className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">3D Printing</h3>
               <ul className="space-y-2 text-gray-600">
@@ -216,9 +228,9 @@ export default function ServicesPage() {
               </ul>
             </div>
 
-            <div className="bg-gray-50 rounded-lg p-6">
-              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-4">
-                <Cog6ToothIcon className="w-8 h-8 text-orange-600" />
+            <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-6 border-l-4 border-orange-600 shadow-lg hover:shadow-xl transition-shadow">
+              <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
+                <Cog6ToothIcon className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">CNC Machining</h3>
               <ul className="space-y-2 text-gray-600">
@@ -230,9 +242,9 @@ export default function ServicesPage() {
               </ul>
             </div>
 
-            <div className="bg-gray-50 rounded-lg p-6">
-              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-4">
-                <WrenchIcon className="w-8 h-8 text-orange-600" />
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 border-l-4 border-blue-600 shadow-lg hover:shadow-xl transition-shadow">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
+                <WrenchIcon className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Sheet Metal</h3>
               <ul className="space-y-2 text-gray-600">
@@ -244,9 +256,9 @@ export default function ServicesPage() {
               </ul>
             </div>
 
-            <div className="bg-gray-50 rounded-lg p-6">
-              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-4">
-                <WrenchScrewdriverIcon className="w-8 h-8 text-orange-600" />
+            <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-6 border-l-4 border-orange-600 shadow-lg hover:shadow-xl transition-shadow">
+              <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
+                <WrenchScrewdriverIcon className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Electronics Assembly</h3>
               <ul className="space-y-2 text-gray-600">
@@ -258,9 +270,9 @@ export default function ServicesPage() {
               </ul>
             </div>
 
-            <div className="bg-gray-50 rounded-lg p-6">
-              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-4">
-                <PaintBrushIcon className="w-8 h-8 text-orange-600" />
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 border-l-4 border-blue-600 shadow-lg hover:shadow-xl transition-shadow">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
+                <PaintBrushIcon className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Finishing & Coating</h3>
               <ul className="space-y-2 text-gray-600">
@@ -289,13 +301,13 @@ export default function ServicesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {whyChooseUs.map((item, index) => (
-              <div key={index} className="text-center">
-                <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <div className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-lg">{index + 1}</span>
+              <div key={index} className="text-center group">
+                <div className="w-20 h-20 bg-gradient-to-br from-orange-100 to-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform">
+                  <div className={`w-12 h-12 ${index % 2 === 0 ? 'bg-gradient-to-br from-orange-500 to-orange-600' : 'bg-gradient-to-br from-blue-500 to-blue-600'} rounded-xl flex items-center justify-center shadow-lg`}>
+                    <span className="text-white font-bold text-xl">{index + 1}</span>
                   </div>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
                   {item.title}
                 </h3>
                 <p className="text-gray-600">
@@ -320,39 +332,39 @@ export default function ServicesPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-orange-500 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+            <div className="text-center group">
+              <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl font-bold shadow-xl group-hover:scale-110 transition-transform">
                 1
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Design & 3D Modeling</h3>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Design & 3D Modeling</h3>
               <p className="text-gray-600">Create detailed 3D models and technical drawings</p>
             </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-orange-500 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+            <div className="text-center group">
+              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl font-bold shadow-xl group-hover:scale-110 transition-transform">
                 2
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Prototyping</h3>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Prototyping</h3>
               <p className="text-gray-600">3D print or machine prototype for testing</p>
             </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-orange-500 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+            <div className="text-center group">
+              <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl font-bold shadow-xl group-hover:scale-110 transition-transform">
                 3
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Testing & Refinement</h3>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Testing & Refinement</h3>
               <p className="text-gray-600">Test prototype and refine design based on feedback</p>
             </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-orange-500 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+            <div className="text-center group">
+              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl font-bold shadow-xl group-hover:scale-110 transition-transform">
                 4
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Production</h3>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Production</h3>
               <p className="text-gray-600">Manufacture final product using appropriate methods</p>
             </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-orange-500 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+            <div className="text-center group">
+              <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl font-bold shadow-xl group-hover:scale-110 transition-transform">
                 5
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Quality & Delivery</h3>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Quality & Delivery</h3>
               <p className="text-gray-600">Quality control and final product delivery</p>
             </div>
           </div>
@@ -360,24 +372,25 @@ export default function ServicesPage() {
       </section>
 
       {/* Contact CTA */}
-      <section className="py-16 bg-orange-600">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
+      <section className="py-20 bg-gradient-to-r from-orange-600 to-blue-600 relative overflow-hidden">
+        <div className="absolute inset-0 bg-black opacity-10"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Ready to Start Your Project?
           </h2>
-          <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-orange-100 mb-10 max-w-2xl mx-auto">
             Get in touch with our team to discuss your requirements and get a free quote.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
               href="/contact" 
-              className="bg-white text-orange-600 px-8 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-colors"
+              className="bg-white text-orange-600 px-10 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all shadow-2xl hover:shadow-orange-500/50 transform hover:scale-105"
             >
               Get Free Quote
             </a>
             <a 
               href="tel:+918439781538" 
-              className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors"
+              className="border-2 border-white text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-secondary-800 transition-all transform hover:scale-105"
             >
               Call Now: +91 8439781538
             </a>

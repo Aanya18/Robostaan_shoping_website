@@ -64,26 +64,29 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-2xl w-full space-y-8">
-        <div>
-          <div className="flex justify-center">
-            <div className="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-xl">E</span>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-secondary-900 via-secondary-800 to-blue-700 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-2xl w-full">
+        <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-10">
+          <div>
+            <div className="flex justify-center mb-6">
+              <img 
+                src="/logo.png" 
+                alt="Robostaan Logo" 
+                className="h-16 w-auto"
+              />
             </div>
+            <h2 className="text-center text-3xl font-bold text-secondary-800 mb-2">
+              Join Robostaan
+            </h2>
+            <p className="text-center text-sm text-gray-600 mb-8">
+              Create your account or{' '}
+              <Link href="/login" className="font-semibold text-orange-600 hover:text-orange-700">
+                sign in to your existing account
+              </Link>
+            </p>
           </div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Create your account
-          </h2>
-          <p className="mt-2 text-center text-sm text-gray-600">
-            Or{' '}
-            <Link href="/login" className="font-medium text-orange-600 hover:text-orange-500">
-              sign in to your existing account
-            </Link>
-          </p>
-        </div>
         
-        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+        <form className="space-y-6" onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Personal Information */}
             <div>
@@ -196,12 +199,19 @@ export default function RegisterPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full btn-primary text-lg py-3 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? 'Creating account...' : 'Create Account'}
             </button>
           </div>
         </form>
+        
+        <div className="mt-6 text-center">
+          <p className="text-sm text-gray-500">
+            By creating an account, you agree to our Terms and Privacy Policy
+          </p>
+        </div>
+        </div>
       </div>
     </div>
   );

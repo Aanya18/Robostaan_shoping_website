@@ -17,35 +17,40 @@ function Header(): JSX.Element {
   const { itemCount } = useCart();
 
   return (
-    <nav className="bg-white border-b">
+    <nav className="bg-white border-b shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-20">
           {/* Left side: Logo and Navigation */}
           <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-2">
-              <img 
-                src="/logo.png" 
-                alt="Robostaan Logo" 
-                className="w-12 h-12"
-              />
-              <span className="text-lg font-medium text-gray-900">
-                Robostaan Shop
-              </span>
+            <Link href="/" className="flex items-center space-x-3 group">
+              <div className="relative">
+                <img 
+                  src="/logo.png" 
+                  alt="Robostaan - An Ageless Adventure" 
+                  className="h-14 w-auto transition-transform group-hover:scale-105"
+                />
+              </div>
+              <div className="hidden lg:block">
+                <div className="text-2xl font-bold text-secondary-800 leading-tight">
+                  Robostaan
+                </div>
+                <p className="text-xs text-orange-600 font-medium tracking-wide uppercase">An Ageless Adventure</p>
+              </div>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
-            <Link href="/about" className="text-gray-700 hover:text-orange-600 text-sm font-medium">
+            <Link href="/about" className="text-secondary-700 hover:text-orange-600 text-sm font-medium transition-colors">
               About
             </Link>
-            <Link href="/services" className="text-gray-700 hover:text-orange-600 text-sm font-medium">
+            <Link href="/services" className="text-secondary-700 hover:text-orange-600 text-sm font-medium transition-colors">
               Services
             </Link>
-            <Link href="/products" className="text-gray-700 hover:text-orange-600 text-sm font-medium">
+            <Link href="/products" className="text-secondary-700 hover:text-orange-600 text-sm font-medium transition-colors">
               Products
             </Link>
-            <Link href="/contact" className="text-gray-700 hover:text-orange-600 text-sm font-medium">
+            <Link href="/contact" className="text-secondary-700 hover:text-orange-600 text-sm font-medium transition-colors">
               Contact
             </Link>
           </div>
@@ -53,10 +58,10 @@ function Header(): JSX.Element {
           {/* Right side: Cart and User */}
           <div className="flex items-center space-x-4">
             {/* Cart */}
-            <Link href="/cart" className="relative flex items-center text-gray-700 hover:text-orange-600">
-              <ShoppingBagIcon className="h-5 w-5" />
+            <Link href="/cart" className="relative flex items-center text-secondary-700 hover:text-orange-600 transition-colors">
+              <ShoppingBagIcon className="h-6 w-6" />
               {itemCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-orange-600 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 bg-orange-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-semibold">
                   {itemCount}
                 </span>
               )}
@@ -65,25 +70,25 @@ function Header(): JSX.Element {
             {/* User Menu */}
             {user ? (
               <div className="relative group">
-                <button className="flex items-center space-x-2 text-gray-700 hover:text-orange-600">
-                  <UserIcon className="h-5 w-5" />
+                <button className="flex items-center space-x-2 text-secondary-700 hover:text-orange-600 transition-colors">
+                  <UserIcon className="h-6 w-6" />
                   <span className="hidden md:block text-sm font-medium">{user.first_name}</span>
                 </button>
-                <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
-                  <Link href="/profile" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
+                <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-100 py-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+                  <Link href="/profile" className="block px-4 py-2 text-sm text-secondary-700 hover:bg-blue-50 hover:text-blue-700 transition-colors">
                     Profile
                   </Link>
-                  <Link href="/orders" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
+                  <Link href="/orders" className="block px-4 py-2 text-sm text-secondary-700 hover:bg-blue-50 hover:text-blue-700 transition-colors">
                     Orders
                   </Link>
                   {user.is_admin && (
-                    <Link href="/admin" className="block px-4 py-2 text-sm text-orange-600 hover:bg-orange-50 font-medium">
+                    <Link href="/admin" className="block px-4 py-2 text-sm text-orange-600 hover:bg-orange-50 font-medium transition-colors">
                       Admin Panel
                     </Link>
                   )}
                   <button
                     onClick={logout}
-                    className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                    className="block w-full text-left px-4 py-2 text-sm text-secondary-700 hover:bg-gray-50 transition-colors"
                   >
                     Logout
                   </button>
@@ -91,11 +96,11 @@ function Header(): JSX.Element {
               </div>
             ) : (
               <div className="flex items-center space-x-4">
-                <Link href="/login" className="text-sm text-gray-700 hover:text-orange-600 font-medium">
+                <Link href="/login" className="text-sm text-secondary-700 hover:text-orange-600 font-medium transition-colors">
                   Login
                 </Link>
                 <Link href="/register" 
-                  className="bg-orange-600 text-white text-sm px-4 py-1.5 rounded font-medium hover:bg-orange-700 transition-colors">
+                  className="bg-orange-600 text-white text-sm px-5 py-2 rounded-lg font-medium hover:bg-orange-700 shadow-sm hover:shadow-md transition-all">
                   Sign Up
                 </Link>
               </div>
@@ -104,12 +109,12 @@ function Header(): JSX.Element {
             {/* Mobile menu button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden text-gray-700 hover:text-orange-600"
+              className="md:hidden text-secondary-700 hover:text-orange-600 transition-colors"
             >
               {isMenuOpen ? (
-                <XMarkIcon className="h-5 w-5" />
+                <XMarkIcon className="h-6 w-6" />
               ) : (
-                <MenuIcon className="h-5 w-5" />
+                <MenuIcon className="h-6 w-6" />
               )}
             </button>
           </div>
@@ -119,20 +124,20 @@ function Header(): JSX.Element {
         {isMenuOpen && (
           <div className="md:hidden border-t border-gray-200 py-3">
             <div className="flex flex-col space-y-3">
-              <Link href="/about" className="text-sm text-gray-700 hover:text-orange-600 font-medium px-2">
+              <Link href="/about" className="text-sm text-secondary-700 hover:text-orange-600 font-medium px-2 transition-colors">
                 About
               </Link>
-              <Link href="/services" className="text-sm text-gray-700 hover:text-orange-600 font-medium px-2">
+              <Link href="/services" className="text-sm text-secondary-700 hover:text-orange-600 font-medium px-2 transition-colors">
                 Services
               </Link>
-              <Link href="/products" className="text-sm text-gray-700 hover:text-orange-600 font-medium px-2">
+              <Link href="/products" className="text-sm text-secondary-700 hover:text-orange-600 font-medium px-2 transition-colors">
                 Products
               </Link>
-              <Link href="/contact" className="text-sm text-gray-700 hover:text-orange-600 font-medium px-2">
+              <Link href="/contact" className="text-sm text-secondary-700 hover:text-orange-600 font-medium px-2 transition-colors">
                 Contact
               </Link>
               {user?.is_admin && (
-                <Link href="/admin" className="text-sm text-orange-600 hover:text-orange-700 font-medium px-2">
+                <Link href="/admin" className="text-sm text-orange-600 hover:text-orange-700 font-medium px-2 transition-colors">
                   Admin Panel
                 </Link>
               )}

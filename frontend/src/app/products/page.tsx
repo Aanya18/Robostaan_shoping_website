@@ -70,10 +70,12 @@ export default function ProductsPage() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       {/* Header */}
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-4">All Products</h1>
+        <h1 className="text-4xl font-bold text-secondary-800 mb-2">All Products</h1>
+        <p className="text-gray-600 mb-6">Discover our complete range of electronic components</p>
         
         {/* Search Bar */}
         <form onSubmit={handleSearch} className="mb-6">
@@ -104,8 +106,8 @@ export default function ProductsPage() {
       <div className="lg:grid lg:grid-cols-4 lg:gap-8">
         {/* Filters Sidebar */}
         <div className={`lg:col-span-1 ${showFilters ? 'block' : 'hidden lg:block'}`}>
-          <div className="bg-white rounded-lg shadow-md p-6 mb-6 lg:mb-0 sticky top-4">
-            <h3 className="text-lg font-semibold mb-4">Filters</h3>
+          <div className="bg-white rounded-2xl shadow-xl p-6 mb-6 lg:mb-0 sticky top-4 border-t-4 border-blue-600">
+            <h3 className="text-xl font-bold text-gray-900 mb-4">Filters</h3>
             
             {/* Categories */}
             <div className="mb-6">
@@ -196,7 +198,8 @@ export default function ProductsPage() {
             </div>
           )}
         </div>
-      </div>
-    </div>
+            </div>
+            </div>
+          </div>
   );
 }

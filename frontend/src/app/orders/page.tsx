@@ -58,8 +58,10 @@ export default function OrdersPage() {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <h1 className="text-3xl font-bold text-gray-900 mb-8">Your Orders</h1>
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 className="text-4xl font-bold text-secondary-800 mb-2">Your Orders</h1>
+      <p className="text-gray-600 mb-8">Track and manage all your orders</p>
       
       {loading ? (
         <div className="space-y-4">
@@ -89,7 +91,7 @@ export default function OrdersPage() {
       ) : (
         <div className="space-y-6">
           {orders.map((order) => (
-            <div key={order.id} className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div key={order.id} className="bg-white rounded-2xl shadow-xl overflow-hidden border-l-4 border-orange-600 hover:shadow-2xl transition-shadow">
               <div className="p-6 border-b border-gray-200">
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
                   <div className="mb-4 lg:mb-0">
@@ -175,6 +177,7 @@ export default function OrdersPage() {
           ))}
         </div>
       )}
+      </div>
     </div>
   );
 }

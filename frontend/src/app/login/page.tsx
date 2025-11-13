@@ -38,26 +38,29 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
-        <div>
-          <div className="flex justify-center">
-            <div className="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-xl">E</span>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-secondary-900 via-secondary-800 to-blue-700 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md w-full">
+        <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-10">
+          <div>
+            <div className="flex justify-center mb-6">
+              <img 
+                src="/logo.png" 
+                alt="Robostaan Logo" 
+                className="h-16 w-auto"
+              />
             </div>
+            <h2 className="text-center text-3xl font-bold text-secondary-800 mb-2">
+              Welcome Back
+            </h2>
+            <p className="text-center text-sm text-gray-600 mb-8">
+              Sign in to your Robostaan account or{' '}
+              <Link href="/register" className="font-semibold text-orange-600 hover:text-orange-700">
+                create a new account
+              </Link>
+            </p>
           </div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Sign in to your account
-          </h2>
-          <p className="mt-2 text-center text-sm text-gray-600">
-            Or{' '}
-            <Link href="/register" className="font-medium text-orange-600 hover:text-orange-500">
-              create a new account
-            </Link>
-          </p>
-        </div>
         
-        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+        <form className="space-y-6" onSubmit={handleSubmit}>
           <div className="space-y-4">
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700">
@@ -118,12 +121,19 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full btn-primary text-lg py-3 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? 'Signing in...' : 'Sign in'}
             </button>
           </div>
         </form>
+        
+        <div className="mt-6 text-center">
+          <p className="text-sm text-gray-500">
+            Protected by industry-standard encryption
+          </p>
+        </div>
+        </div>
       </div>
     </div>
   );

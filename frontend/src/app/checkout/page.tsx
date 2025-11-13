@@ -98,8 +98,10 @@ export default function CheckoutPage() {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <h1 className="text-3xl font-bold text-gray-900 mb-8">Checkout</h1>
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 className="text-4xl font-bold text-secondary-800 mb-2">Checkout</h1>
+      <p className="text-gray-600 mb-8">Complete your order securely</p>
       
       <div className="lg:grid lg:grid-cols-12 lg:gap-x-12">
         {/* Checkout Form */}
@@ -236,8 +238,8 @@ export default function CheckoutPage() {
 
         {/* Order Summary */}
         <div className="lg:col-span-5">
-          <div className="bg-gray-50 rounded-lg px-4 py-6 sm:p-6 lg:p-8 mt-8 lg:mt-0 sticky top-4">
-            <h2 className="text-lg font-medium text-gray-900 mb-6">Order Summary</h2>
+          <div className="bg-white rounded-2xl shadow-xl px-4 py-6 sm:p-6 lg:p-8 mt-8 lg:mt-0 sticky top-4 border-t-4 border-orange-600">
+            <h2 className="text-xl font-bold text-gray-900 mb-6">Order Summary</h2>
             
             {/* Order Items */}
             <div className="space-y-4 mb-6">
@@ -290,7 +292,7 @@ export default function CheckoutPage() {
             <button
               onClick={handleSubmit}
               disabled={loading}
-              className="w-full btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full btn-primary text-lg py-4 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl transition-all"
             >
               {loading ? 'Placing Order...' : `Place Order - $${finalTotal.toFixed(2)}`}
             </button>
@@ -299,9 +301,10 @@ export default function CheckoutPage() {
             <div className="mt-6">
               <TrustIndicators variant="checkout" />
             </div>
+            </div>
           </div>
         </div>
+        </div>
       </div>
-    </div>
   );
 }
